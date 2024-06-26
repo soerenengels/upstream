@@ -1,0 +1,31 @@
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Farben: global */
+    --clr-body-background: var(--clr-green-900);
+    /* TODO */ --clr-body-text: var(--clr-green-100); 
+    --clr-anchor-text: var(--clr-red-900);
+    --clr-breadcrumb: ;
+    --site-background: var(--clr-green-900);
+    --site-text: var(--clr-green-100);
+  }
+  .subtitle {
+    color: var(--clr-white-50);
+  }
+  mark, .highlight {
+    color: var(--clr-green-900);
+    /* padding-inline: .5em; */
+    padding-block: .25em;
+  }
+  .button__subscribe--light {
+    background-color: var(--clr-red-900);
+    border-radius: 1em;
+    color: var(--clr-white);
+    padding: .25em .5em;
+  }
+  .tags {
+    --clr-bg: var(--clr-green-700) !important;
+    --clr-bg-hover: var(--clr-red-700) !important;
+    --clr-txt: var(--clr-green-900) !important;
+  }
+}

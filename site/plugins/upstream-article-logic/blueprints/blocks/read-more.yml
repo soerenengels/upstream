@@ -1,0 +1,12 @@
+name: "Weiterlesen"
+icon: "➡️"
+#wysiwyg: true
+
+fields:
+  text:
+    label: Linktext
+    type: writer
+    placeholder: Mehr dazu ...
+  link:
+    label: Link
+    type: link

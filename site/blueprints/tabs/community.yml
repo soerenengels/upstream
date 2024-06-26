@@ -1,0 +1,36 @@
+label: Community
+icon: chat
+columns:
+  community_header:
+    width: 2/3
+    sections: 
+      community_info_text:
+        type: info
+        label: Die Upstream-Community
+        theme: none
+        text: "Die Upstream-Community ist mehr als Zahlen.\nFür wen wir schreiben findest du [hier](/intern/personas)."
+      
+  commmunity_pages:
+    width: 1/3
+    sections:
+      community_general_pages:
+        type: pages
+        headline: Seiten
+        parent: site.find('community')
+
+  community_col_stats:
+    width: 1/2
+    sections:
+      community_stats_section: sections/community/stats
+  community_col_polls:
+    width: 1/2
+    sections:
+      community_polls_section:
+        headline: Umfragen
+        type: pages
+        layout: cardlets
+        parent: site.find('community').find('umfragen')
+        image: page.ogImage
+
+
+      

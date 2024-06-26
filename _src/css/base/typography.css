@@ -1,0 +1,228 @@
+/* Typographie */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+  max-width: 75ch;
+}
+h1, ,.h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  font-family: var(--font-family-headlines);
+  line-height: 1.2;
+	margin-block: .5em .25em;
+}
+h1, .h1 {
+  font-size: var(--font-size-xl);
+  font-weight: 800;
+  /* letter-spacing: -0.01em; */
+}
+h2, .h2 {
+  font-size: var(--font-size-l);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+h3, .h3 {
+  font-size: var(--font-size-m);
+  font-weight: 700;
+  margin-bottom: 0.2em;
+}
+h4, .h4 {
+    font-weight: 600;
+  font-size: var(--font-size-normal);
+  margin-bottom: 0.1em;
+}
+h5, .h5 {
+    ont-weight: 500;
+  font-size: var(--font-size-normal);
+}
+h6, .h6 {
+  font-size: var(--font-size-normal);
+}
+p {
+  hyphens: auto;
+  line-height: 1.6;
+  padding: 0.5em 0;
+}
+em.marked-green, em.highlight, mark {
+  background-color: var(--clr-marked-background);
+  font-style: initial;
+}
+/* ::selection {
+    background-color: var(--clr-red-100);
+} */
+.strong {
+  font-weight: bold;
+}
+sup.footnote a {
+  font-weight: bold;
+  color: var(--clr-anchor-text);
+  text-decoration: none !important;
+  padding-inline: .25em;
+}
+p.footnote {
+  font-size: var(--font-size-xs);
+}
+.reference {
+  color: var(--clr-anchor-text);
+}
+
+.underlined {
+  text-decoration: underline;
+  text-decoration-color: var(--color-green-light);
+  text-decoration-style: solid;
+  text-decoration-thickness: 0.1em;
+}
+
+span.category + h2 {
+  margin-top: 0;
+}
+p + h2 {
+  margin-top: 1em;
+}
+p + h3 {
+  margin-top: .75em;
+}
+
+span.category, .category-indicator {
+  display: block;
+  font-size: var(--font-size-s);
+  font-weight: bold;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  color: var(--clr-green-900);
+}
+.category-indicator {
+	margin-block: 0;
+}
+
+/* Links */
+a {
+  color: unset;
+	transition: color 0.3s ease;
+	word-break: break-word;
+}
+a:hover, a:active {
+  color: #FD6163;
+  text-decoration-color: #235861;
+}
+a[aria-current=page] {
+  font-weight: bold;
+  /* font-style: italic; */
+}
+
+a.social {
+	color: var(--clr-purple-700);
+	display: inline-flex;
+	align-items: baseline;
+	font-weight: bold;
+	text-decoration: none;
+
+	& svg {
+		height: .8em;
+		scale: .9;
+		margin-inline: 0;
+		& * {
+			fill: var(--clr-purple-300);
+		}
+	}
+
+	&:hover {
+		color: var(--clr-red-700);
+		transition: .3s ease;
+		& svg {
+			scale: 1;
+			transition: scale .3s ease;
+		}
+		& svg * {
+			/* transition: .3s ease; */
+    		fill: var(--clr-red-700);
+		}
+	}
+}
+
+/* Links: zum Glossar*/
+
+.article__content a[href^="https://"]:not([href^="https://upstream"]) {
+    color: var(--clr-green-900);
+
+    &:after {
+        color: var(--clr-red-900);
+        content: "↗";
+        /* display: inline-block; */
+    }
+}
+
+/* main a[href^="https://"]:not([href^="https://dev.upstream"]) {
+  color: var(--clr-green-900);
+}
+main a[href^="https://"]:not([href^="https://dev.upstream"]):after {
+  color: var(--clr-red-900);
+  content: "↗";
+  display: inline-block;
+} */
+
+main a[href^="/glossar"]:not(.card a) {
+    color: var(--clr-brown-900);
+    text-decoration-color: var(--clr-brown-500);
+    text-decoration-style: dotted;
+    text-decoration-thickness: .2em;
+
+    &:hover {
+        transition: .3s ease;
+        text-decoration-color: var(--clr-brown-700);
+        text-decoration-style: solid;
+        text-decoration-thickness: .3em;
+    }
+}
+/* .main div a {
+  text-decoration: none;
+} */
+.text-small {
+  font-size: var(--font-size-xs);
+}
+
+p:has( .read-more) {
+	text-align: right;
+	& .read-more {
+		font-size: var(--font-size-s);
+		text-decoration: .1em dotted underline var(--clr-green-999);
+		text-underline-offset: .2em;
+		transition: .3s ease;
+		&:hover {
+			text-decoration-style: solid;
+		}
+	}
+
+}
+
+.fancy-marker {
+  /* padding-left: 3em; */
+  position: relative;
+}
+
+.fancy-marker ::marker {
+  /* position: absolute;
+  top: 2em; */
+  font-weight: 900;
+  /*font-size: 3em; */
+}
+
+ul:not(nav ul), ol {
+  margin-left: 1.5em;
+}
+ul:not(nav ul) li, ol li {
+  padding: 0.25em 0;
+}
+
+blockquote {
+	font-size: var(--font-size-s);
+	background: var(--clr-blockquote-background);
+	color: var(--clr-blockquote-text);
+	margin-block: 1em;
+	padding: .5em 1em;
+	border-left: .35em solid var(--clr-blockquote-text);
+	& cite {
+		display: inline-block;
+		font-weight: 600;
+		&:before {
+			content: ' — ';
+		}
+	}
+}

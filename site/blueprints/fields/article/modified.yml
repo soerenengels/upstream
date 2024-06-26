@@ -1,0 +1,4 @@
+label: "Zuletzt bearbeitet:"
+type: date
+time: true
+default: now

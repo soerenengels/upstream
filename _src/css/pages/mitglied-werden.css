@@ -1,0 +1,35 @@
+.mitglied-werden {
+	&.card__container {
+		grid-template-columns: 1fr 1fr;
+		@media (--viewport-medium) {
+			grid-template-columns: 1fr 2fr;
+		}
+		& .card {
+			background-color: transparent;
+			align-content: end;
+			/* reset .card aspect-ratio */
+			@media (--viewport-medium) {
+				aspect-ratio: auto;
+			}
+			&:first-of-type {
+				background-color: var(--clr-red-300);
+				padding: 0;
+				display: flex;
+				align-items: flex-end;
+				justify-content: center;
+
+			}
+		}
+		& picture {
+			height: 100%;
+			/* width: 100%; */
+		}
+		& img {
+			object-fit: cover;
+			height: 100%;
+		}
+	}
+	& .card {
+
+	}
+}

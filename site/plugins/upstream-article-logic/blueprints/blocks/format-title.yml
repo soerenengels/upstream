@@ -1,0 +1,50 @@
+name: "Formattitel"
+icon: info
+wysiwyg: false
+
+fields:
+  upstream_format_select:
+    label: Textformat
+    type: select
+    default: Begriff erklärt
+    options:
+      interview:
+        text: Interview
+        value: Interview
+      begriff:
+        text: Begriff erklärt
+        value: Begriff erklärt
+      modell:
+        text: Modell erklärt
+        value: Modell erklärt
+      narrativ:
+        text: Narrativ hinterfragt
+        value: Narrativ hinterfragt
+      aktuelles:
+        text: Aktuelles
+        value: Aktuelles
+      schlaglichter:
+        text: Schlaglichter
+        value: Schlaglichter
+      takeaways:
+        text: Takeaways
+        value: Takeaways
+      anhang:
+        text: Anhang
+        value: Anhang
+      praxistauglich:
+        text: Praxistauglich
+        value: Praxistauglich
+      custom:
+        text: Selbst eintragen
+        value: Selbst eintragen
+  upstream_format_title:
+    label: Formattitel
+    type: text
+    #when:
+      #format: custom
+  upstream_format_id:
+    label: "CSS #id (ohne #)"
+    type: text
+    #when:
+      #category: custom

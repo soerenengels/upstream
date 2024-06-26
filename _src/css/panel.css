@@ -1,0 +1,48 @@
+@charset "UTF-8";
+@import 'base/variables.css';
+@import 'base/fonts.css';
+
+:root {
+    /* --color-background: var(--clr-green-100); */
+		/* --color-border: var(--clr-green-900); */
+    /* --font-sans: var(--font-family);
+    --font-bold: 700; */
+		/* --color-focus: var(--clr-purple-500);
+		--color-notice: var(--clr-red-300);
+		// --color-negative: var(--clr-red-900);
+		--color-red-200:	var(--clr-red-300);
+		--color-red-300:	var(--clr-red-500);
+		--color-red-400:	var(--clr-red-700);
+		--color-red-600: var(--clr-red-900);
+		--color-notice-light: var(--clr-red-300);
+		--color-green-200:	var(--clr-green-300);
+		--color-green-300:	var(--clr-green-500);
+		--color-green-400:	var(--clr-green-700);
+		--color-green-600: var(--clr-green-900);
+		--color-positive: var(--clr-green-700); */
+}
+/* .k-topbar {
+    --bg: var(--clr-green-900);
+} */
+/* .k-tabs {
+  background-color: var(--clr-green-100);
+}
+.k-tab-button[aria-current] {
+	background-color: var(--clr-green-500);
+} */
+mark {
+    background-color: var(--clr-green-500);
+}
+/* .k-header::before {
+  float: right;
+  content: '';
+  margin-top: -1em;
+  margin-right: -1em;
+  // width: 150px;
+  height: 5em;
+  width: 5em;
+  background-image: url('/assets/images/icons/mstile-150x150.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  clear: right;
+} */

@@ -1,0 +1,13 @@
+type: fields
+fields:
+  primaryNavigation:
+    type: structure
+    label: Hauptnavigation
+    fields:
+      text:
+        type: text
+        label: Titel
+        mobile: true
+      link:
+        label: Link
+        type: link

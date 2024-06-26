@@ -1,0 +1,6 @@
+<input 
+    name="<?= $name ?? '' ?>"
+    type="<?= $type ?? 'text' ?>"
+    value="<?= $value ?? '' ?>"
+    placeholder="<?= $placeholder ?? '' ?>"
+    class="<?= $class ?? '' ?>">

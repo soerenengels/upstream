@@ -1,0 +1,28 @@
+.k-navigation {
+	--clr-link: var(--clr-white-900);
+	--clr-underline: var(--clr-red-700);
+
+	& a {
+		color: var(--clr-link);
+		padding-bottom: .1em;
+		&:hover, &:focus {
+			outline: none;
+			border-bottom: .1em solid var(--clr-underline);
+		}
+
+	}
+
+	/* Transition of unhovered/unfocussed links */
+	& li {
+		transition: opacity .6s ease;
+	}
+	&:has(li a:hover), &:has(li a:focus) {
+		& li {
+			opacity: .5;
+			transition: opacity .3s ease;
+		}
+		& li:hover, & li:focus-within {
+			opacity: 1;
+		}
+	}
+}

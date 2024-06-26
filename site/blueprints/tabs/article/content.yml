@@ -1,0 +1,16 @@
+label: Artikel
+columns:
+  - width: 2/3
+    sections:
+      article_content:
+        type: fields
+        width: 1/3
+        fields:
+          text:
+            type: blocks
+  - width: 1/3
+    sections:
+      article_teaser:
+        type: fields
+        fields: 
+          teaser: fields/article/teaser

@@ -1,0 +1,6 @@
+title: "Abonnent*in"
+description: "Upstream-Abonnent*in"
+
+permissions:
+  access: 
+    panel: false

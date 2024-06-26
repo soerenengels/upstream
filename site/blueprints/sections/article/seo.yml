@@ -1,0 +1,14 @@
+type: fields
+fields:
+	meta_title:
+		type: text
+		label: SEO-Titel
+		help: Der SEO-Titel wird in der Suchmaschine, dem Browsertab und den Breadcrumbs angezeigt.
+		maxlength: 70
+		width: 1/2
+	meta_description:
+		type: textarea
+		buttons: false
+		label: SEO-Beschreibung
+		maxlength: 150
+		width: 1/2

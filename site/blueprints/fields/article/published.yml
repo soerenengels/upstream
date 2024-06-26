@@ -1,0 +1,4 @@
+label: "Veröffentlichungsdatum"
+type: date
+time: true
+default: now

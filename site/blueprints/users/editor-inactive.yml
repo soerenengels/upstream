@@ -1,0 +1,39 @@
+title: "Ehemalige*r Redakteur*in"
+description: Ein*e inaktive*r Redakteur*in kann seine*ihre Informationen bearbeiten.
+home: /panel/account
+
+permissions:
+  access:
+    retour: false
+    settings: false
+    users: false
+    site: false
+
+columns:
+  - width: 1/2
+    sections:
+      articles:
+        type: fields
+        fields:
+          bio:
+            label: Bio für Artikel
+            type: text
+          city:
+            label: City
+            type: text
+
+  - width: 1/2
+    fields:
+      website:
+        label: Website
+        type: url
+      twitter:
+        label: Twitter
+        type: text
+        icon: twitter
+        placeholder: @username
+      instagram:
+        label: Instagram
+        type: text
+        icon: instagram
+        placeholder: username

@@ -1,0 +1,13 @@
+type: fields
+fields:
+  footerNavigation:
+    type: structure
+    label: Footernavigation
+    fields:
+      text:
+        type: text
+        label: Titel
+        mobile: true
+      link:
+        label: Link
+        type: link

@@ -1,0 +1,35 @@
+title: Artikel
+num: '{{ page.date.toDate("Ymd") }}'
+icon: 📖
+
+status:
+  draft:
+    label: Entwurf
+    text: Der Artikel ist im Entwurfsmodus und kann nur von Redakteur*innen gesehen werden.
+  unlisted:
+    label: Eingereicht
+    text: Der Artikel ist in die Redigatur eingereicht. Er ist nun online un kann mit über die bekannte URL zugegriffen werden. Das Team muss dem Artikel vor der Veröffentlichung noch das Go geben.
+  listed:
+    label: Veröffentlicht
+    text: Der Artikel ist veröffentlicht und gelisted
+
+tabs:
+  content_tab:
+    columns:
+      - width: 2/3
+        sections:
+          content:
+            type: fields
+            fields:
+              layout:
+                type: layout
+                layouts:
+                  - "1/3, 2/3"
+                  - "1/1"
+                  - "1/2, 1/2"
+                  - "1/3, 1/3, 1/3"
+                  - "2/3, 1/3"
+      - width: 1/3
+        sections:
+          - type: pages
+  #context_tab: tabs/article/context

@@ -1,0 +1,13 @@
+type: group
+fields:
+	cover:
+    type: files
+		width: "1/3"
+    label: Titelbild
+    multiple: false
+    query: page.images.template('cover')
+    uploads: cover
+	teaser:
+    type: textarea
+		width: "1/3"
+    maxlength: 240

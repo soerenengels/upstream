@@ -1,0 +1,47 @@
+
+sections:
+  homepage:  
+    fields:
+      featured:
+        type: toggle
+        label: Auf der Startseite featuren
+        description: "Aktivieren, um auf der Startseite anzuzeigen"
+        text:
+          - "Wird nicht angegezeigt"
+          - "Wird angezeigt"
+        default: "false"
+
+    type: fields
+    fields:
+      cover:
+        label: Titelbild
+        type: files
+        multiple: false
+        query: page.images.template('cover')
+        uploads:
+          template: cover
+  meta:
+    type: fields
+    fields:
+      date:
+        label: "Veröffentlicht am:"
+        type: date
+        time: true
+        default: now
+      modified:
+        label: "Zuletzt bearbeitet:"
+        type: date
+        time: true
+        default: now
+      author:
+        label: "Autor*innen"
+        type: users
+      tags:
+        type: tags
+  seo:
+    type: fields
+    fields:
+      meta-description:
+        label: SEO-Beschreibung
+        type: text
+        maxlength: 150

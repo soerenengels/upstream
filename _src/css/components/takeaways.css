@@ -1,0 +1,35 @@
+.takeaways {
+	background: var(--clr-white);
+	padding: 1.5em .5em .5em;
+	font-size: var(--font-size-s);
+	position: relative;
+	hyphens: auto;
+	text-wrap: balance;
+
+	& .format__title {
+		position: absolute;
+		margin: 0 auto;
+		inset: 0 auto auto auto;
+		transform: translateY(-.5em);
+		background: var(--clr-green-100);
+		border-radius: 2em;
+		border: .1em solid var(--clr-green-900);
+		padding: .25em .5em;
+	}
+	& ul {
+		margin: .5em;
+	}
+	& li {
+		list-style-type: none;
+
+	}
+	& a {
+		font-weight: bold;
+		text-decoration: none;
+		&:first-of-type::before {
+			content: "→";
+			font-weight: bold;
+			padding-right: .25em;
+		}
+	}
+}

@@ -1,0 +1,8 @@
+type: fields
+fields:
+ date:
+		extends: fields/article/published
+		width: 1/2
+	modified:
+		extends: fields/article/modified
+		width: 1/2

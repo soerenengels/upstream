@@ -1,0 +1,6 @@
+title: "Mitglied"
+description: "Upstream-Abonnent*in oder -Mitglied"
+
+permissions:
+  access: 
+    panel: false

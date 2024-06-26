@@ -1,0 +1,24 @@
+#author {
+    display: grid;
+    gap: 1em;
+}
+.social {
+	gap: .2em;
+}
+@media (--viewport-small) {
+    #author {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .col-2 {
+        grid-column: span 2;
+    }
+    .col-3 {
+        grid-column: span 3;
+				& .all-articles {
+					--grid-template-areas: "articles articles articles";
+					& article.article__card {
+						grid-column: initial;
+					}
+				}
+    }
+}

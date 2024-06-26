@@ -1,0 +1,66 @@
+:root {
+	/* Farben */
+	/* ALTE VARIABLEN */
+	/*
+	--clr-green-900-transparent: hsla(196, 43%, 27%, 0.8);
+	--clr-white-50: rgba(255, 255, 255, 0.5);
+	--clr-black-50: rgba(0, 0, 0, 0.25);
+	--clr-black-25: rgba(0, 0, 0, 0.25);
+	*/
+
+
+	/* Rot, Community */
+	--clr-red-900: hsla(9, 100%, 58%, var(--alpha, 1)); /* #FF4A2B */
+	--clr-red-700: hsla(12, 100%, 65%, var(--alpha, 1)); /* #FF704E; */
+	--clr-red-500: hsla(15, 100%, 78%, var(--alpha, 1)); /* #FFA98D; */
+	--clr-red-300: hsla(27, 100%, 85%, var(--alpha, 1)); /* #ffd5b3; */
+	--clr-red-100: hsla(28, 100%, 95%, var(--alpha, 1)); /* #fff1e5; */
+	/* Grün, Artikel/Interview */
+	--clr-green-999: hsla(198, 31%, 25%, var(--alpha, 1)); /* #2B4652; */
+	--clr-green-900: hsla(196, 43%, 27%, var(--alpha, 1)); /* #275261; */
+	--clr-green-700: hsla(180, 38%, 80%, var(--alpha, 1)); /* #BAE0E0; */
+	--clr-green-500: hsla(180, 37%, 90%, var(--alpha, 1)); /* #dcefef; */
+	--clr-green-300: hsla(180, 39%, 80%, var(--alpha, 1)); /* #B8E0E0; */
+	--clr-green-100: hsla(180, 43%, 95%, var(--alpha, 1)); /* #EBF7F7; */
+	/* rgb a */
+	--clr-green-999: rgb(44, 72, 84);
+	--clr-green-999: hsl(198, 31%, 25%); /* #2B4652; */
+	--clr-green-900: hsl(195, 44%, 26%); /* #275261; */
+	--clr-green-700: #bae0e0;
+	--clr-green-700: hsl(180, 37%, 80%); /* #BAE0E0; */
+	--clr-green-500: hsl(180, 37%, 90%); /* #dcefef; */
+	--clr-green-300: hsl(180, 39%, 80%); /* #B8E0E0; */
+	--clr-green-100: hsl(180, 44%, 95%); /* #EBF7F7; */
+
+	/* Lila, Beteiligen */
+	--clr-purple-999: #262d40;
+	--clr-purple-900: #272c3e;
+	--clr-purple-700: #4c5777;
+	--clr-purple-500: #6474b4;
+	--clr-purple-300: #bac4e2;
+	--clr-purple-100: #edf0f7;
+
+	/* Braun, Glossar/Info */
+	--clr-brown-900: rgb(91, 75, 60);
+	--clr-brown-900: #5b4b3c;
+	--clr-brown-700: #988a7c;
+	--clr-brown-500: #bbb1a6;
+	--clr-brown-300: rgb(230, 225, 220);
+	--clr-brown-300: #e6e1dc;
+	--clr-brown-100: #f1eeeb;
+
+	/* Schwarz, Weiß, Grau */
+	--clr-white: #ffffff;
+	--clr-black: #000000;
+	--clr-black-900: hsl(0,0%,15%);
+	--clr-grey-900: #3e3e3e;
+	--clr-grey-700: #717171;
+	--clr-grey-500: #b4b4b4;
+	--clr-grey-300: #e2e2e2;
+	--clr-grey-100: #f7f7f7;
+
+
+	/* Brand-Colors */
+	--clr-twitter: #1da1f2;
+	--clr-instagram: #c13584;
+}

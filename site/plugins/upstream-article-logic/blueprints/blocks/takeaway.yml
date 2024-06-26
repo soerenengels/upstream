@@ -1,0 +1,16 @@
+name: Takeaways
+icon: "📮"
+preview: fields
+wysiwyg: true
+
+fields:
+  upstream_takeaways_format:
+    label: Format
+    type: text
+    placeholder: Takeaways
+  upstream_takeaways_headline:
+    label: Überschrift
+    type: text
+  upstream_takeaways_text:
+    label: Text
+    type: list

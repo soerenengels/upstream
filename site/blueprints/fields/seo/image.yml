@@ -1,0 +1,7 @@
+label: SEO-Bild / Sharepic
+type: files
+multiple: false
+query: page.images.template('seo-image')
+uploads:
+  template: seo-image
+help: "Das Bild sollte idealerweise 1.200 x 630 Pixel groß und im Format 1,91:1 angelegt sein. Fotos sollten als JPG abgespeichert werden, Grafiken als PNG. Komprimierung vorm hochladen und Alternativtext nicht vergessen."

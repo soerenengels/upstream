@@ -1,0 +1,11 @@
+/* Bilder & Grafiken */
+img {
+  max-width: 100%;
+  height: auto;
+}
+figure {
+  margin-block: 1em;
+}
+figcaption {
+  font-size: var(--font-size-xs);
+}

@@ -1,0 +1,57 @@
+@import 'colors.css';
+:root {
+	/* Schrift */
+	--font-family-headlines: "Montserrat Variable", "Montserrat", "Avenir", Arial, Helvetica, sans-serif;
+	--font-family: "Montserrat Variable", "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+
+	--font-size-h1: 1.5em;
+	--font-size-h2: 1.25em;
+	--font-size-h3: 1.1em;
+	--font-size-h4: 1em;
+	--font-size-h5: 1em;
+	--font-size-h6: 1em;
+	--font-size-base: 16px;
+	/* Neuere Variablen */
+	--font-size-xs: .66em;
+	--font-size-s: .8em;
+	--font-size-normal: 1em;
+	--font-size-m: 1.1em;
+	--font-size-l: 1.25em;
+	--font-size-xl: 1.5em;
+
+
+
+	/* Farben: global */
+	--clr-body-background: var(--clr-grey-100);
+	--clr-body-text: hsl(0,0%,15%);
+	--clr-anchor-text: var(--clr-red-900);
+	/* --clr-breadcrumb: var(--clr-grey-700); */
+
+	--clr-font: var(--clr-black-900);
+	--clr-marked-text: var(--clr-green-900);
+	--clr-marked-background: var(--clr-green-500);
+	--clr-icons: var(--clr-green-100);
+	--clr-icons-hover: var(--clr-red-300);
+
+	/* Layout */
+	--max-content-width: 50rem;
+	--subtitle-threshold: 1060px;
+
+	--clr-input-background: var(--clr-white-50);
+	--clr-input-text: var(--clr-green-900);
+	--clr-input-placeholder: var(--clr-grey-500);
+
+	--clr-blockquote-text: var(--clr-body-text);
+	--clr-blockquote-background: var(--clr-grey-300);
+
+	/* Schmuck */
+	/* --line-waved: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 400"><path d="M0.8968492746353149,279.82061767578125C40.65768577655157,260.53810628255206,149.92524697383243,160.5381062825521,239.4618682861328,164.12554931640625C328.9984895984332,167.7129923502604,444.99251556396484,320.47830899556476,538.1165771484375,301.34527587890625C631.2406387329102,282.21224276224774,754.8579610188802,91.33033816019693,798.2062377929688,49.32735061645508" fill="none" stroke-width="25" stroke="hsl(0, 0%, 80%)" stroke-linecap="round"></path><defs><linearGradient id="SvgjsLinearGradient1002"><stop stop-color="hsl(37, 99%, 67%)" offset="0"></stop><stop stop-color="hsl(316, 73%, 52%)" offset="1"></stop></linearGradient></defs></svg>'); */
+}
+
+@custom-media --viewport-xxsmall (min-width: 300px);
+@custom-media --viewport-xsmall (min-width: 400px);
+@custom-media --viewport-small (min-width: 600px);
+@custom-media --viewport-medium (min-width: 800px);
+@custom-media --viewport-large (min-width: 1000px);
+@custom-media --viewport-xlarge (min-width: 1200px);

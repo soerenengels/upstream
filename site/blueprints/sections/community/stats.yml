@@ -1,0 +1,18 @@
+type: stats
+label: Übersicht
+width: 1/2
+size: huge
+reports:
+  - site.steady.report('newsletter_subscribers')
+  #- site.steady.report('members')
+  #- site.steady.report('revenue')
+  - label: Follower*innen auf Instagram
+    value: 1712
+    info: "Stand: 1. Juni 2023"
+    theme: info
+    link: https://instagram.com/upstream.mail/
+  #- label: Twitter
+    #value: 512
+    #info: "Stand: 1. Juni 2023"
+    #theme: info
+    #link: https://twitter.com/UpstreamMail

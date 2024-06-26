@@ -1,0 +1,6 @@
+type: pages
+headline: Umfragen
+info: "{{ page.date.toDate('d.m.Y') }}"
+template: poll
+empty: Aktuell keine Umfrage
+sortBy: date desc

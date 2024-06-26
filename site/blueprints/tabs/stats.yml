@@ -1,0 +1,12 @@
+label: Statistiken
+icon: chart
+columns:
+  - width: 1/3
+    sections:
+      matomo:
+        type: matomo-page
+      matomo_info:
+        type: info
+        label: Info
+        text: Die Daten vor dem Relaunch werden hier leider nicht angezeigt.
+

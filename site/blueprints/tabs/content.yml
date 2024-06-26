@@ -1,0 +1,9 @@
+label: Inhalt
+icon: draft
+columns:
+	main:
+		sections:
+			content:
+				type: fields
+				fields:
+					layout: fields/layout

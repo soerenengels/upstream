@@ -1,0 +1,4 @@
+label: SEO-Titel
+type: text
+maxlength: 60
+help: "Maximal 60 Zeichen. Fokus: Nutzwert"

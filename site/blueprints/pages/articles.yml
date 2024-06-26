@@ -1,0 +1,28 @@
+title: Alle Artikel (page blueprint)
+icon: 📚
+
+columns:
+  left:
+    width: 1/1
+    sections:
+      drafts:
+        extends: sections/artikel
+        headline: Entwürfe
+        status: draft
+
+  middle:
+    width: 1/1
+    sections:
+      unlisted:
+        extends: sections/artikel
+        headline: Review ({{ collection('articles/all').filterBy('status', 'unlisted').count }})
+        status: unlisted
+
+  right:
+    width: 1/1
+    sections:
+      listed:
+        extends: sections/artikel
+        headline: {{ collection('articles/all').filterBy('status', 'listed').count }} veröffentlichte Artikel
+        status: listed
+        limit: 10

@@ -1,0 +1,24 @@
+type: fields
+fields:
+	context_author:
+		label: "Autor*innen"
+		type: users
+		query: kirby.users.filterBy("role", "in", ["editor", "editor-inactive"])
+		help: "Autor*innen des Textes"
+	context_vgwort:
+		extends: fields/article/vgwort
+	context_produktion:
+		type: users
+		label: Produktion
+		help: "Verantwortliche*r für die Produktion des Textes"
+		query: kirby.users.filterBy("role", "in", ["editor", "editor-inactive"])
+	context_redigatur:
+		type: users
+		label: Redigatur
+		help: "Verantwortliche*r für die Redigatur des Textes"
+		query: kirby.users.filterBy("role", "in", ["editor", "editor-inactive"])
+	context_bildredaktion:
+		type: users
+		label: Bildredaktion
+		help: "Verantwortliche*r für die Bildredaktion"
+		query: kirby.users.filterBy("role", "in", ["editor", "editor-inactive"])

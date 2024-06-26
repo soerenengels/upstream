@@ -1,0 +1,19 @@
+title: Linktree
+options:
+  changeStatus: false
+
+sections:
+  content:
+    type: fields
+    fields:
+      headline:
+        type: text
+        width: 1/2
+  second:
+    type: fields
+    fields:
+      text:
+        type: blocks
+        width: 1/2
+
+

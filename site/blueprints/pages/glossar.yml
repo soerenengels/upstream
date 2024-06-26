@@ -1,0 +1,43 @@
+title: Glossar
+icon: info
+
+tabs:
+  overview:
+    label: Übersicht
+    icon: info
+    columns:
+      - width: 2/3
+        sections:
+          listed:
+            label: "Alle {{ page.children.count }} Begriffe, alphabetisch sortiert"
+            extends: sections/glossar
+            headline: Veröffentlicht
+            status: listed
+            size: small
+            sortBy: title
+      - width: 1/3
+        sections:
+          files: true
+          drafts:
+            extends: sections/glossar
+            headline: Entwürfe
+            status: draft
+          unlisted:
+            extends: sections/glossar
+            headline: Eingereicht
+            status: unlisted
+  main: tabs/content
+  teaser: tabs/article/teaser
+  engagement:
+    label: Engagement
+    icon: megaphone
+    sections:
+      - type: fields
+        fields:
+          engagementFooter:
+            label: Engagement Footer
+            help: "Der Engagement Footer wird unterhalb des Textes eines Glossar-Begriffes angezeigt."
+            type: blocks
+            max: 1
+            blocks:
+              - engagement-section

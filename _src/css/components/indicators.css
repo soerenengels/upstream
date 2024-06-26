@@ -1,0 +1,40 @@
+.indicators {
+	display: flex;
+	flex-wrap: wrap;
+	list-style-type: none;
+	margin: 0;
+}
+
+.indicator {
+	/*
+		--indicator-clr-text: color;
+		--indicator-clr-underline: color;
+		--indicator-size: size;
+	*/
+	--clr-links: var(--indicator-clr-text);
+	place-self: start;
+	margin-inline-end: .75em;
+	font-size: var(--indicator-size, var(--font-size-xs));
+
+	& a {
+		color: var(--indicator-clr-text);
+		text-decoration: .1em underline var(--indicator-clr-underline);
+		text-underline-offset: .25em;
+		transition: all 0.8s;
+
+		&:hover, &:focus {
+			&:not(.new a) {
+				--clr-links-hover: var(--indicator-clr-underline);
+				text-underline-offset: 0;
+				text-decoration: 0 solid transparent;
+				color: var(--indicator-clr-underline);
+				transition: all 0.3s;
+			}
+		}
+	}
+	&.new {
+		--indicator-clr-underline: var(--clr-red-900);
+		--indicator-clr-text: white;
+		cursor: default;
+	}
+}

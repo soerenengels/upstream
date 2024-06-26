@@ -1,0 +1,9 @@
+type: fields
+fields:
+  show_in_linktree:
+    type: toggle
+    options:
+      - Nicht zeigen
+      - Zeigen
+  linktree_title:
+    type: text

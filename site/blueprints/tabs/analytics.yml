@@ -1,0 +1,20 @@
+label: Statistiken
+icon: chart
+columns:
+  - width: 1/1
+    sections:
+      matomo_headline_section:
+        type: fields
+        fields:
+          - type: headline
+            numbered: false
+            label: Und nun zu den Zahlen ...
+            help: Hier findest du die Besucher*innenzahlen der Upstream-Website.
+  - width: 3/4
+    sections:
+      main:
+        type: matomo-main
+  - width: 1/4
+    sections:
+      sidebar:
+        type: matomo-sidebar

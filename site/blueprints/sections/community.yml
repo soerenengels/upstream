@@ -1,0 +1,11 @@
+
+info: "{{ page.date.toDate('d.m.Y') }}"
+sortBy: date desc
+fields:
+  text:
+    type: blocks
+    query:
+      fetch: page("community").text
+  pages:
+    parent: kirby.page("community")
+    template: default

@@ -1,0 +1,12 @@
+{
+    "name": "soerenengels/og-image",
+    "version": "0.0.1",
+    "type": "kirby-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sören Engels",
+            "email": "mail@soerenengels.de"
+        }
+    ]
+}

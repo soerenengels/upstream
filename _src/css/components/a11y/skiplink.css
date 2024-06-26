@@ -1,0 +1,20 @@
+/* A11y: Skip-Link, öffnet durch initalen Tab */
+.skip-to-content-link {
+	background: var(--clr-green-700);
+	color: var(--clr-green-900);
+	margin: 0;
+	padding: 2em;
+	position: absolute;
+	transform: translateY(-100%);
+	transition: 0.3s;
+	border-radius: 0 0 2rem 2rem;
+	z-index: 9999;
+}
+.skip-to-content-link:focus-within {
+	transform: translateY(0%);
+}
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation: none;
+	}
+}

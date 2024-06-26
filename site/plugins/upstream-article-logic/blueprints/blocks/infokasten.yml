@@ -1,0 +1,19 @@
+name: Infokasten
+icon: "grid-full"
+#wysiwyg: true
+
+fields:
+  headline:
+    label: Infokasten-Titel
+    type: text
+    placeholder: Titel des Infokastens
+  text:
+    label: Infokasten-Text
+    type: writer
+    placeholder: Erklärtext
+  opened:
+    label: Bei Seitenaufruf offen?
+    type: toggle
+    text:
+      - "geschlossen"
+      - "geöffnet"

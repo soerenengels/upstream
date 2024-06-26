@@ -1,0 +1,9 @@
+label: Format
+type: select
+options:
+  article: Artikel
+	newsletter: Newsletter
+	interview: Interview
+	community: Community
+	engage: Beteiligen
+	glossar: Glossar

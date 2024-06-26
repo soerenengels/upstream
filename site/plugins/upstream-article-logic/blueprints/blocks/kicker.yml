@@ -1,0 +1,18 @@
+name: Kicker
+icon: alert
+#wysiwyg: true
+
+fields:
+    text:
+        label: Kicker-Text
+        type: writer
+        placeholder: Darum bist du hinterher ein besserer Mensch
+    color:
+        label: Farbe
+        type: select
+        options:
+            orange: Community
+            light: Artikel
+            dark: Interview
+            brown: Glossar
+            grey: Neutral

@@ -1,0 +1,71 @@
+title: Umfrage
+icon: chat
+
+columns:
+  new:
+    width: 1/1
+    sections:
+      poll_section:
+        type: fields
+        fields:
+          poll:
+            type: blocks
+            fieldsets:
+              - type: poll_explainer
+                name: Explainer
+                wysiwyg: true
+                preview: fields
+                icon: bolt
+                fields:
+                  title:
+                    type: text
+                  text:
+                    type: blocks
+              - type: poll_page
+                name: Umfrage-Seite
+                wysiwyg: true
+                preview: fields
+                icon: bolt
+                fields:
+                  title:
+                    type: text
+                  text:
+                    type: blocks
+              - type: poll_success
+                name: Versendet
+                wysiwyg: true
+                preview: fields
+                icon: bolt
+                fields:
+                  title:
+                    type: text
+                  text:
+                    type: blocks
+  left:
+    width: 1/2
+    sections:
+      pages:
+        headline: Fragekarten
+        type: pages
+        create:
+          - umfrage-item
+          - default
+          - umfrage-success
+
+  middle:
+    width: 1/2
+    sections:
+      content:
+        type: fields
+        fields:
+          text:
+            label: Umfrage-Explainer
+            type: blocks
+            default:
+              - type: heading
+                content:
+                  level: h2
+                  text: "Hilf uns dabei ... zu machen oder ... herauszufinden"
+              - type: text
+                content:
+                  text: "In diesem Explainer stellst du dich kurz vor, erklärst, warum du die Community bei deiner Entscheidung X oder Recherche Y beteiligen willst und endest mit einem Call to Action."

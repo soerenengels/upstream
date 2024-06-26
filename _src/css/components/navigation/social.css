@@ -1,0 +1,21 @@
+.social {
+	--size-icons: 1.25em;
+	--gap: 0.5em;
+
+
+	& ul {
+		display: flex;
+		gap: var(--gap);
+		height: var(--size-icons);
+		margin-inline: 0;
+	}
+	& .icon {
+		transition: scale .1s ease;
+	}
+	& a:hover, a:focus {
+		& .icon {
+				scale: 1.2;
+				transition: scale .3s ease;
+		}
+	}
+}

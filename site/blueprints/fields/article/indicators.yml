@@ -1,0 +1,5 @@
+label: Artikel-Thema
+type: tags
+options: query
+query: site.index.pluck("indicators", ",", true)
+help: "Artikel-Indikatoren werden in der Artikelvorschau über dem Titel und Teaser angezeigt. Ist der Artikel jünger als ein Monat, wird automatisch der Indikator «Neu» eingeblendet."

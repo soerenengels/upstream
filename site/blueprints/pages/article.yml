@@ -1,0 +1,38 @@
+title: Artikel
+num: '{{ page.date.toDate("Ymd") }}'
+icon: page
+
+create:
+  title:
+    label: Titel
+  fields:
+    - format
+  redirect: true
+
+status:
+  draft:
+    label: Entwurf
+    text: Der Artikel ist im Entwurfsmodus und kann nur von Redakteur*innen gesehen werden.
+  unlisted:
+    label: Eingereicht
+    text: Der Artikel ist bereit zur Redigatur. Er ist nun online und kann über die URL aufgerufen werden. Das Team muss dem Artikel vor der Veröffentlichung noch das Go geben.
+  listed:
+    label: Veröffentlicht
+    text: Der Artikel ist veröffentlicht und gelisted
+
+tabs:
+  content: tabs/content
+  teaser: tabs/article/teaser
+  authors: tabs/article/authors
+  context: tabs/article/context
+  #stats_tab: tabs/article/stats
+  seo: 
+    extends: seo/page
+    label: SEO
+    columns:
+      main:
+        fields:
+          robots: false
+          twitterCardType: false
+          twitterAuthor: false
+          metaInherit: false

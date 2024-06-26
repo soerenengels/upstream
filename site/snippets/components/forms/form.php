@@ -1,0 +1,6 @@
+<form
+    action="<?= $action ?? '' ?>"
+    class="<?= $class ?? '' ?>"
+    method="<?= $method ?? 'GET' ?>">
+    <?= $slot ?>
+</form>

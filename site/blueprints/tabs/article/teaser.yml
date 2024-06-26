@@ -1,0 +1,54 @@
+label: Teaser
+icon: grid-top
+columns:
+  - width: 1/3
+    sections:
+      article_cover:
+        type: fields
+        fields:
+          cover:
+            type: files
+            label: Titelbild
+            multiple: false
+            query: page.images.template('cover')
+            uploads: cover
+            width: 1/3
+            layout: cards
+            size: huge
+            #cover: true
+            ratio: 16/9
+            help: "Tipp: Benenne die Bilddatei mit allen relevanten Schlagworten, für eine bessere Sichtbarkeit in Suchmaschinenergebnissen."
+  - width: 1/3
+    sections:
+      article_topic:
+        type: fields
+        fields:
+          teaser:
+            type: textarea
+            maxlength: 240
+            help: "Mögliche Leseanreize: Fragen, Cliffhänger, Foreshaddowing auf Erkenntnisgewinn. Der Teaser soll dem\*der Leser\*in Lust machen den Text zu lesen."
+          topic:
+            label: Thema
+            type: tags
+            options: query
+            query: site.index.pluck("indicators", ",", true)
+            help: "Das Thema des Artikels wird in der Artikelvorschau über dem Titel und Teaser angezeigt. Ist der Artikel jünger als ein Monat, wird automatisch der Indikator «Neu» eingeblendet."
+          color:
+            label: Format
+            type: color
+            mode: options
+            help: Artikel, Interview, Beteiligen, Community, Glossar, Default
+            options:
+              - text: "Artikel"
+                value: "#EBF7F7"
+              - text: "Interview"
+                value: "#275261"
+              - text: "Beteiligen"
+                value: "#edf0f7"
+              - text: "Community"
+                value: "#fff1e5"
+              - text: "Glossar"
+                value: "#f1eeeb"
+              - text: "Default"
+                value: "#e2e2e2"
+              

@@ -1,0 +1,4 @@
+label: SEO-Beschreibung
+type: text
+maxlength: 150
+help: "Maximal 150 Zeichen. Ideal: Fragen, Schlagworte."

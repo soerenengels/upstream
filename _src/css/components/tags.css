@@ -1,0 +1,41 @@
+/* Tags */
+.tags {
+    --clr-bg: var(--clr-green-900);
+    --clr-bg-hover: var(--clr-red-700);
+    --clr-txt: var(--clr-green-100);
+    margin: 2em auto 3em;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+
+    & li {
+        list-style-type: none;
+				margin-block: .25em;
+        & :first-child {
+            margin-right: .5em;
+        }
+    }
+
+    & a {
+				--_opacity: var(--opacity, 1);
+				opacity: var(--_opacity);
+        background-color: var(--clr-bg);
+        color: var(--clr-txt);
+        padding: 0.5em 1em;
+        border-radius: 1em;
+        text-decoration: none;
+        margin-right: 0.3em;
+        transition: all 0.3s;
+        & :hover, & :focus {
+            background-color: var(--clr-bg-hover);
+            /* transition: all 0.8s; */
+        }
+				&:hover {
+					--_opacity: 1;
+				}
+    }
+	& svg, & g {
+		vertical-align: middle;
+		fill: var(--clr-green-900);
+	}
+}

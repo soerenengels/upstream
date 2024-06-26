@@ -1,0 +1,33 @@
+title: Umfragen
+icon: chat
+
+tabs:
+  polls_tab:
+    icon: chat
+    label: Umfragen
+    columns:
+      - width: 1/3
+        sections:
+          draft:
+            extends: sections/umfragen
+            headline: Entwürfe
+            status: draft
+            empty: Aktuell kein Entwurf für eine Umfrage
+            create: umfrage
+      - width: 1/3
+        sections: 
+          listed:
+            extends: sections/umfragen
+            headline: In Review
+            status: unlisted
+            empty: Aktuell keine Umfrage in Review
+      - width: 1/3
+        sections:
+          published:
+            extends: sections/umfragen
+            headline: Veröffentlichte Umfragen
+            status: listed
+            empty: Aktuell keine veröffentlichte Umfrage
+      
+  content_tab: tabs/content
+  teaser: tabs/article/teaser

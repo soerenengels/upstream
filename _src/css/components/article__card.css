@@ -1,0 +1,210 @@
+.article__card {
+
+	/* Setup: Color Defaults */
+	--indicator-clr-text: var(--clr-grey-100);
+	--indicator-clr-underline: var(--clr-green-500);
+	--clr-text: var(--clr-grey-900);
+	--clr-background: var(--clr-white);
+
+	/* Default */
+	--grid-template-areas: "cover headline" "cover teaser";
+	--grid-template-columns: 2fr 3fr;
+	--grid-template-rows: auto;
+
+	/* Colors */
+	color: var(--clr-text);
+
+	/* Layout */
+	display: grid;
+	gap: var(--gap, 0.25em 0);
+	grid-template-areas: var(--grid-template-areas);
+	grid-template-columns: var(--grid-template-columns);
+	grid-template-rows: var(--grid-template-rows);
+	isolation: isolate;
+
+
+
+	& div {
+		align-self: stretch;
+		background: var(--clr-background);
+		display: block;
+		grid-area: var(--color-area, 1 / 2 / -1 / -1);
+	}
+
+	@media (--viewport-small) {
+		& {
+			--grid-template-columns: repeat(2, 1fr);
+			--grid-area-image: 2 / 1 / -1 / 2;
+			--grid-area-text: 2 / 2 / -1 / 3;
+		}
+	}
+
+
+	& .indicators {
+		grid-area: var(--indicator-area, cover);
+		z-index: 10;
+		margin-inline: 1rem;
+		margin-block-start: 0.5rem;
+		place-self: start;
+	}
+
+	& .image__container {
+		grid-area: var(--image-area, cover);
+		background: var(--clr-background);
+		color: var(--clr-text);
+		box-sizing: border-box;
+		aspect-ratio: var(--apect-ratio, initial);
+		align-self: stretch;
+		&:after {
+			grid-area: picture;
+			background: linear-gradient(170deg, rgba(0,0,0, 0.8), rgba(0,0,0, 0) 40%, transparent 40%);
+			content: '';
+		}
+
+		& img {
+			display: block;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		display: grid;
+		grid-template-areas: "picture";
+		& picture {
+			grid-area: picture;
+		}
+	}
+
+	& .headline {
+		margin-inline: 1rem;
+		margin-block-start: 0.75rem;
+		word-break: break-word;
+		hyphens: auto;
+		grid-area: headline;
+		color: var(--clr-text);
+		text-decoration: none;
+		z-index: 11;
+		& a {
+			text-decoration: none;
+		}
+	}
+	& p {
+		margin-inline: 1rem;
+		margin-block-end: 0.75rem;
+		font-size: var(--font-size-s);
+		line-height: 1.35;
+		grid-area: teaser;
+		color: var(--clr-text);
+		z-index: 11;
+	}
+
+	/* Card Types: .default (Default), .text, .cover */
+	&.article__header {
+		--grid-template-columns: 1fr 1fr;
+		--grid-template-rows: auto 1fr;
+		margin-block-end: 1em;
+		& .image__container {
+			&:before,
+			&:after {
+				display: none;
+			}
+		}
+		& .headline {
+			margin-block-start: 1em;
+			text-wrap: balance;
+		}
+		& p {
+			font-size: var(--font-size-normal);
+		}
+		/* & picture {
+			aspect-ratio: 16/9;
+		} */
+	}
+
+	&.text {
+		--indicator-area: indicator;
+		--grid-template-columns: 1fr;
+		--grid-area-text: 3 / 1 / -1 / -1;
+		--color-area: 1 / 1 / -1 / -1;
+		--grid-template-areas: "indicator" "headline" "teaser";
+		&.indicator-outside {
+			--color-area: 2 / 1 / -1 / -1 !important;
+		}
+		& .image__container {
+			display: none;
+		}
+		& .headline {
+			margin-inline: 1rem;
+			margin-block-start: 0rem;
+		}
+	}
+
+	&.cover {
+		--clr-text: var(--clr-green-100);
+		--indicator-area: indicator;
+		--grid-template-areas: "." "indicator" "headline" "teaser";
+		--grid-template-columns: 1fr;
+		--grid-template-rows: 1fr auto auto auto;
+		--color-area: -3 / 1 / -1 / -1;
+		--image-area: 1 / 1 / -1 / -1;
+
+		& .color-area {
+			display: none;
+		}
+		& .indicators {
+			margin-bottom: -.5em;
+		}
+		& .image__container {
+			/* background: unset; */
+			&:before,
+			&:after {
+				background: var(
+					--gradient,
+					linear-gradient(to top, var(--clr-green-900), transparent)
+				);
+				content: "";
+				display: block;
+				grid-area: picture;
+				height: 100%;
+				opacity: 0.5;
+				z-index: 2;
+			}
+			&:after {
+				--gradient: linear-gradient(
+					to top,
+					rgba(0, 0, 0, 0.8),
+					rgba(0, 0, 0, 0.1) 70%
+				);
+				opacity: 1;
+				z-index: 1;
+			}
+		}
+	}
+}
+
+/*
+    Farbänderungen
+*/
+
+.newsletter, .artikel {
+	--clr-background: var(--clr-green-700);
+	--clr-text: var(--clr-green-999);
+}
+.interview {
+	--clr-text: var(--clr-green-100);
+	--clr-background: var(--clr-green-900);
+}
+.community {
+	--clr-background: var(--clr-red-300);
+	--clr-text: var(--clr-red-999);
+	.color-area {
+		--clr-background: var(--clr-red-100);
+	}
+}
+.glossar {
+	--clr-background: var(--clr-brown-300);
+	--clr-text: var(--clr-purple-999);
+}
+.participate {
+	--clr-text: var(--clr-purple-999);
+	--clr-background: var(--clr-purple-300);
+}

@@ -1,0 +1,6 @@
+og_image_preview:
+	type: og_image_preview
+og_image_custom:
+	type: fields
+	fields:
+		extends: fields/seo/og_image

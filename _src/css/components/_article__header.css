@@ -1,0 +1,38 @@
+/*
+	Stylesheet für	snippets/article__header.php
+	Variablen:
+    	Hintergrund (Bild): --clr-bg-img    default
+    	Hintergrund (Text): --clr-bg-txt    default
+   		Schriftfarbe:       --clr-txt       default
+*//*
+.article__header {
+    background: var(--clr-background, var(--clr-grey-300));
+    color: var(--clr-text, var(--clr-grey-900));
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(15rem, 100%), 1fr));
+		margin-block-end: 1em;
+
+
+    grid-column: 1 / -1;
+
+    & picture.overlay {
+        mix-blend-mode: overlay;
+    }
+    & img {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    & section {
+        background: var(--clr-background, var(--clr-grey-300));
+        padding: 1em;
+    }
+
+
+} */
+@media (--viewport-small) {
+    .article__header {
+        grid-template-columns: repeat(auto-fit, minmax(min(15rem, 100%), 1fr));
+    }
+}
+

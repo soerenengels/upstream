@@ -1,0 +1,13 @@
+label: Seiten
+icon: folder-structure
+sections:
+  site_pages_overview:
+    width: 1/2
+    headline: Seiten
+    type: pages
+    parent: site
+    create: default
+    sortBy: title desc
+    #templates:
+      #- home
+      #- default

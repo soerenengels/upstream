@@ -1,0 +1,43 @@
+label: "Autor*innen"
+icon: users
+
+
+sections:
+	context_section_authorships:
+    type: fields
+    fields:
+      context_author:
+        width: 1/4
+        label: "Radakteur*innen"
+        type: users
+        query: kirby.users.filterBy("role", "in", ["editor", "editor-inactive"])
+        help: "Autor*innen des Textes"
+      #context_vgwort:
+        #width: 1/4
+        #extends: fields/article/vgwort
+      
+      context_redigatur:
+        width: 1/4
+        type: users
+        label: Redigatur
+        help: "Verantwortliche*r für die Redigatur des Textes"
+        query: kirby.users.filterBy("role", "in", ["editor", "editor-inactive"])
+      context_bildredaktion:
+        width: 1/4
+        type: users
+        label: Bildredaktion
+        help: "Verantwortliche*r für die Bildredaktion"
+        query: kirby.users.filterBy("role", "in", ["editor", "editor-inactive"])
+      context_produktion:
+        width: 1/4
+        type: users
+        label: Produktion
+        help: "Verantwortliche*r für die Produktion des Textes"
+        query: kirby.users.filterBy("role", "in", ["editor", "editor-inactive"])
+  context_authors_vgwort:
+    type: fields
+    fields:
+      context_vgwort:
+        type: text
+        label: Zählpixel (VG-Wort)
+        help: Hier nur die Zahl vom Zählpixel eingeben.

@@ -1,0 +1,68 @@
+label: Redaktion
+icon: dashboard
+columns:
+  - width: 2/3
+    sections:
+      welcome:
+        type: fields
+        fields:
+          welcome_user:
+            type: headline
+            numbered: false
+            label: "Hallo {{ user.name }}!"
+            help: |
+              Willkommen in der Redaktionsstube von Upstream.
+              Ungleichheit macht krank. Wir recherchieren wie.
+              Und was dagegen getan werden kann.
+
+              Shortcuts: [Drive](https://drive.google.com/drive/folders/1OsY-ciVZ_MNtthwh6lXQcXirz9ttnfqg?usp=share_link), [Trello](https://trello.com/b/8iBhoU0q/upstream-redaktion), [Twitter](https://twitter.com/UpstreamMail), [Insta](https://instagram.com/upstream.mail/)
+  - width: 1/3
+    sections: 
+      redaktion_pages:
+        headline: Redaktionsseiten
+        type: pages
+        parent: site.find('redaktion')
+        sortBy: template desc
+        #query: page.children.first
+        #query: pages.not(p)
+        query: page.childrenAndDrafts.not(page.childrenAndDrafts.filterBy('template', 'author'))
+        create: default
+  - width: 1/2
+    sections:
+      artikels_overview:
+        width: 1/2
+        type: pages
+        search: true
+        headline: Alle Artikel
+        #layout: table
+        parent: kirby.page("artikel")
+        info: "{{ page.date.toDate('d.m.Y') }}"
+        template: article
+        help: "Mit Klick auf ›Alle Artikel‹ gelangst du zur Artikelübersicht"
+        empty: Aktuell kein Artikel
+        sortBy: status asc date desc format desc
+        sortable: true
+        limit: 10
+        image:
+          cover: true
+          query: page.images.filterBy('template', 'cover').first
+        info: false
+        columns:
+          format:
+            type: tags
+            width: 1/10
+          date:
+            label: Veröffentlicht
+            value: "{{ page.date.toDate('d.m.Y') }}"
+            align: right
+            width: 2/12
+
+  - width: 1/2
+    sections:
+      glossar_pulished:
+        extends: sections/glossar
+        headline: "Glossar"
+        #status: listed
+        search: true
+        limit: 10
+        help: "Mit Klick auf ›Glossar‹ gelangst du zur Übersicht"

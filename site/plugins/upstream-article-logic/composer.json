@@ -1,0 +1,15 @@
+{
+    "name": "upstream/article-logic",
+    "description": "Kirby Plugin für Upstream",
+    "type": "kirby-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sören Engels",
+            "email": "soeren.engels@googlemail.com"
+        }
+    ],
+    "require": {
+        "getkirby/composer-installer": "^1.1"
+    }
+}

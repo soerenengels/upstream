@@ -1,0 +1,44 @@
+title: Glossar-Begriff
+num: '{{ page.date.toDate("Ymd") }}'
+icon: info
+options:
+	changeTemplate:
+		- artikel.newsletter
+		- artikel.interview
+
+status:
+	draft:
+		label: Entwurf
+		text: Der Artikel ist im Entwurfsmodus und kann nur von Redakteur*innen gesehen werden.
+	unlisted:
+		label: Eingereicht
+		text: Der Artikel ist in die Redigatur eingereicht. Er ist nun online un kann mit über die bekannte URL zugegriffen werden. Das Team muss dem Artikel vor der Veröffentlichung noch das Go geben.
+	listed:
+		label: Veröffentlicht
+		text: Der Artikel ist veröffentlicht und gelisted
+
+tabs:
+	content: tabs/content
+	question:
+		label: Frage
+		icon: question
+		sections:
+				glossar_context:
+						type: fields
+						fields:
+							question:
+								type: text
+								label: Wie fragst du nach dem Begriff?
+	teaser: tabs/article/teaser
+	authors: tabs/article/authors
+	context: tabs/article/context
+	seo: 
+    extends: seo/page
+    label: SEO
+    columns:
+      main:
+        fields:
+          robots: false
+          twitterCardType: false
+          twitterAuthor: false
+          metaInherit: false

@@ -1,0 +1,11 @@
+name: Team
+icon: "👫"
+wysiwyg: true
+
+fields:
+  upstream_team_members:
+    label: Team-Mitglieder
+    type: users
+  upstream_team_show_text:
+    label: Kurztext anzeigen?
+    type: toggle

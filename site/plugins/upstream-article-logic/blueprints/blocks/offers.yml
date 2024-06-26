@@ -1,0 +1,12 @@
+name: Pakete
+icon: 📦
+wysiwyg: true
+
+fields:
+  upstream_offers_select:
+    label: Pakete
+    type: select
+		options:
+			- Notfallapotheke
+			- Basisversicherung
+			- Präventionspaket

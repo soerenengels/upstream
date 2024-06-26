@@ -1,0 +1,57 @@
+#linktree {
+	/* background: var(--clr-green-300); */
+	min-height: 100vh;
+	& header {
+		display: grid;
+		gap: 0 1em;
+		place-content: center;
+		place-items: center;
+		grid-template-rows: auto auto auto;
+	}
+	& picture {
+		grid-area: 1 / 1;
+		display: grid;
+		width: 50vw;
+		height: 50vw;
+		border-radius: 25vw;
+		background: var(--clr-red-300);
+		margin-inline: auto;
+		margin-block: 1em;
+		animation: linktreeLoading 1.5s forwards ease;
+		animation-iteration-count: 1;
+		& img {
+			padding: 20%;
+			place-self: center;
+			filter: drop-shadow(0 0 20px var(--clr-red-700))
+		}
+	}
+	& .linktree__title {
+		grid-area: 1 / 2;
+	}
+	& span {
+		font-style: italic;
+	}
+	& .linktree__social {
+		grid-area: 2 / 1 / auto / span 2;
+		display: flex;
+		list-style-type: none;
+		& li {
+			margin-inline: .5em;
+		}
+	}
+	& main {
+		text-align: center;
+	}
+}
+@keyframes linktreeLoading {
+	from {
+		width: 50vw;
+		height: 50vw;
+		border-radius: 25vw;
+	}
+	to {
+		width: 20vw;
+		height: 20vw;
+		border-radius: 10vw;
+	}
+}

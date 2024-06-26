@@ -1,0 +1,30 @@
+.search__form {
+	--clr-button-primary-bg: var(--clr-green-900);
+	--clr-button-primary-text: var(--clr-green-100);
+
+    display: flex;
+    flex-wrap: wrap;
+	gap: .75em;
+    padding-block: .5em;
+
+    & input {
+        margin: 0;
+
+        &[type=search] {
+			border: 1px solid var(--clr-green-500);
+            flex-grow: 1;
+			max-width: 32ch;
+        }
+    }
+}
+
+.search__results {
+    list-style-type: none;
+    display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+    gap: 0 0.75em;
+    margin: 0;
+		& .article__card {
+			--grid-template-rows: 1fr auto auto;
+		}
+}

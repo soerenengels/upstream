@@ -1,0 +1,17 @@
+type: textarea
+fields:
+  textarea_label:
+    label: Label for textarea
+    placeholder: Enter your text here
+    type: text
+  textarea_id:
+    label: Id for textarea
+    type: slug
+  textarea_field:
+    label: Textarea
+    type: textarea
+    placeholder: Enter your text here
+    size: large
+    buttons: false
+    help: This is a textarea field
+  

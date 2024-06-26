@@ -1,0 +1,23 @@
+@charset "UTF-8";
+@import 'base/variables.css';
+html, body {
+	background: transparent;
+}
+.menu {
+	display: none;
+}
+.article__engage, .footer__navigation {
+	display: none;
+}
+.article__comment {
+	display: none;
+}
+ {
+	background-color: transparent;
+	color: var(--clr-font);
+}
+#footer &:not(.footer__reduced) {
+    background: var(--clr-green-900);
+    color: var(--clr-green-100);
+    margin-top: 1rem;
+  }

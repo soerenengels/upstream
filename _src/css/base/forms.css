@@ -1,0 +1,126 @@
+/* Formulare */
+input,
+button,
+.button,
+textarea,
+select {
+	--clr-outline: var(--clr-red-300);
+	background-color: var(--clr-input-background);
+	border: none;
+	border-radius: 2em;
+	color: var(--clr-input-text);
+	font: inherit;
+	font-size: var(--font-size-s);
+	margin-block: 1em;
+	padding: var(--padding);
+	&::placeholder {
+		color: var(--clr-input-placeholder);
+	}
+	&:active,
+	&:focus {
+		outline-color: var(--clr-outline);
+	}
+}
+
+input {
+	--padding: 0.5em 1.5em;
+	box-sizing: content-box;
+	height: 2em;
+}
+textarea {
+	--padding: 1em 1em;
+	height: 5em;
+	width: 100%;
+	resize: vertical;
+}
+
+button,
+.button,
+select,
+input[type="radio"] {
+	cursor: pointer;
+}
+
+.button {
+	--padding: 0.5em 1.5em;
+	height: 2em;
+}
+
+.button__dark {
+	--clr-input-text: var(--clr-button-primary-text, var(--clr-red-500));
+	--clr-input-background: var(--clr-button-primary-bg, var(--clr-purple-999));
+	--clr-outline: var(--clr-red-300);
+}
+
+.no-button {
+	--clr-input-background: transparent;
+	font-size: var(--font-size-normal);
+	line-height: 1.2;
+	margin: 0;
+	border: 0;
+	overflow: visible;
+	text-decoration: 0.15em underline;
+	text-decoration-color: transparent;
+
+	&:hover {
+		text-decoration-color: var(--clr-input-text);
+		transition: text-decoration-color 0.3s ease;
+	}
+}
+
+input[type="search"] {
+	--clr-outline: var(--clr-red-700);
+	cursor: pointer;
+	background-color: transparent;
+	border: none;
+	border-radius: .25em .25em 0 0;
+	border-bottom: .2em solid var(--clr-grey-300);
+	color: var(--clr-green-100);
+	font: inherit;/*
+	font-size: var(--font-size-m); */
+	font-weight: 400;
+	margin-block: 1em 2em;
+	padding: var(--padding);
+	outline: unset;
+	--padding: 0.15em .5em;
+	box-sizing: content-box;
+	height: auto;
+	&::placeholder {
+		color: var(--clr-green-100);
+		opacity: .8;
+		transition: opacity .3s ease;
+	}
+	&:hover, &:focus {
+		&::placeholder {
+			opacity: 1;
+		}
+	}
+	&:active,
+	&:focus,
+	&:focus-visible {
+		background-color: color-mix(in oklch, var(--clr-green-999) 90%, black);
+		outline: none;
+		border-bottom: .2em solid var(--clr-outline);
+	}
+}
+
+/* a.button, span.button {
+	height: unset;
+	margin-block: unset;
+} */
+/* .button__red {
+  background-color: var(--clr-red-700) !important;
+  color: var(--clr-red-100) !important;
+  box-shadow:
+    inset .2em .2em .4em var(--clr-white-50),
+    inset -.2em -.2em .4em var(--clr-black-25);
+  transition: all .2s ease;
+	&:hover, &:focus {
+		background: var(--clr-red-700) !important;
+		transition: all .4s ease;
+	}
+	&:active {
+		transform: scale(.9);
+		transition: all .2s ease;
+	}
+} */

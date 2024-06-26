@@ -1,0 +1,34 @@
+.grid {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	margin-block-end: .5em;
+	gap: 1em;
+}
+.column {
+	grid-column: span var(--span);
+}
+.layout__row {
+	--margin: .5em;
+
+	display: grid;
+	gap: 1.5em;
+	/* grid-template-columns: repeat(12, 1fr); */
+	grid-template-columns: 1fr;
+	margin-block-end: var(--margin);
+}
+
+.layout__column {
+	grid-column: 1 / -1;
+
+}
+
+@media (--viewport-medium) {
+	.layout__row {
+		grid-template-columns: repeat(12, 1fr);
+
+	}
+	.layout__column {
+		grid-column: span var(--span);
+
+	}
+}

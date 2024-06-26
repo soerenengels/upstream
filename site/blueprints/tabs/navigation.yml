@@ -1,0 +1,109 @@
+label: Menüs
+icon: map
+columns:
+  - width: 1/1
+    sections:
+      headerNavigationSection:
+        type: fields
+        fields:
+          headerNavigationField:
+            type: headline
+            numbered: false
+            label: "Die Karte(n) der Herumtreibenden"
+            help: |
+              Erstelle und sortiere die Links für das Hauptmenü und die Footernavigation.
+  - sections:
+      newNavigationSection:
+        type: fields
+        fields:
+          navigations:
+            type: blocks
+            fieldsets:
+              navigation:
+                icon: map
+                wysiwyg: true
+                preview: fields
+                tabs:
+                  items:
+                    fields:
+                      items:
+                        type: structure
+                        columns:
+                          label:
+                            width: 1/3
+                          link:
+                            width: 1/3
+                          icon:
+                            width: 1/6
+                          depth:
+                            width: 1/12
+                        fields:
+                          label:
+                            type: text
+                            required: true
+                          link:
+                            type: link
+                          icon:
+                            type: icon
+                          depth:
+                            width: 1/12
+                            type: number
+                            default: 1
+                            min: 1
+                            max: 5
+
+                  settings:
+                    fields:
+                      title:
+                        type: text
+                        required: true
+                      slug:
+                        type: slug
+                        sync: title
+                        required: true
+                        wizard:
+                          text: "page.changeSlug.fromTitle"
+                          field: title
+                      type:
+                        type: select
+                        default: Default
+                        options:
+                          - Default
+                          - Icon
+                          - Alphabet
+      navigationSection:
+        type: fields
+        fields:
+          navigationWrapper:
+            type: structure
+            label: soerenengels.navigations
+            fields:
+              label:
+                type: text
+                label: soerenengels.navigations.label
+              name:
+                label: soerenengels.navigations.slug
+                type: slug
+                help: To identify Navigation in site method $site->navigation($slug)
+              items:
+                  type: structure
+                  label: soerenengels.navigations.items
+                  sortable: true
+                  fields:
+                    label:
+                      label: soerenengels.navigations.label
+                      type: text
+                    link:
+                      label: soerenengels.navigations.link
+                      type: link
+                    icons:
+                      label: soerenengels.navigations.icon
+                      type: icon
+                      folder: assets/icons
+                    depth:
+                      label: soerenengels.navigations.depth
+                      type: number
+                      default: 1
+                      min: 1
+                      max: 5
+                

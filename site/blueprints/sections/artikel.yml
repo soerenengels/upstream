@@ -1,0 +1,29 @@
+type: pages
+search: true
+headline: Artikel
+layout: table
+parent: kirby.page("artikel")
+info: "{{ page.date.toDate('d.m.Y') }}"
+template: article
+empty: Aktuell kein Artikel
+sortBy: date desc format asc
+sortable: true
+#limit: 5
+image:
+  cover: true
+  query: page.images.filterBy('template', 'cover').first
+info: false
+columns:
+  format:
+    type: tags
+  indicators:
+    label: Thema
+    type: tags
+  date:
+    label: Veröffentlicht
+    value: "{{ page.date.toDate('d.m.Y') }}"
+    align: right
+    width: 2/12
+  tags:
+    label: Tags
+    type: tags

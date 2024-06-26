@@ -1,0 +1,34 @@
+name: Engagement-Section
+icon: "🫵"
+wysiwyg: true
+preview: fields
+
+fields:
+  upstream_engagement_shuffle:
+    label: Karten zufällig auswählen
+    type: toggle
+    help: Die Performence der Startseite ist höher, wenn die Karten bewusst gewählt werden
+  upstream_engagement_section:
+    label: Engagement-Karten
+    type: structure
+    fields:
+      card_type:
+        label: Kartentyp
+        type: select
+        options:
+          - community
+          - participate
+          - default
+      card_text:
+        label: Text
+        type: text
+      card_cta:
+        label: Call-to-Action
+        type: text
+      card_cta_link:
+        label: Link
+        type: link
+      card_active:
+        label: Aktiv
+        type: toggle
+

@@ -1,0 +1,1 @@
+<?php snippet('components/offers') ?>

@@ -1,0 +1,14 @@
+name: Kiosk
+icon: carouselview
+wysiwyg: true
+preview: fields
+
+fields:
+  upstream_kiosk_headline:
+    label: Titel
+    type: text
+    default: Journalismus für faire Gesundheit
+  upstream_kiosk_shelf:
+    label: Hervorgehobene Artikel
+    type: pages
+    limit: 5

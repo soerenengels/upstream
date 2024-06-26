@@ -1,0 +1,27 @@
+{
+	"devDependencies": {
+		"cssnano": "^7.0.2",
+		"postcss": "^8.4.18",
+		"postcss-cli": "^11.0.0",
+		"postcss-preset-env": "^9.3.0",
+		"svgo": "^3.0.2",
+		"typescript": "^5.3.3"
+	},
+	"scripts": {
+		"clean": "rm -rf assets/{css,js}",
+		"watch": "npm run postcss:watch & npm run ts:watch2",
+		"build": "npm run clean && npm run postcss:build && npm run ts:build && npm run icons:optimize && npx hashup@latest",
+		"postcss:watch": "postcss _src/css/*.css --dir assets/css/ -w",
+		"postcss:build": "postcss _src/css/*.css --dir assets/css/",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"ts:build": "tsc _src/ts/*.ts --outDir assets/js",
+		"ts:watch": "tsc _src/ts/*.ts --outDir assets/js -w",
+		"ts:watch2": "tsc -w",
+		"icons:optimize": "svgo -f ./_src/icons -o ./assets/icons"
+	},
+	"author": "Sören Engels",
+	"dependencies": {
+		"postcss-import": "^16.0.1",
+		"remixicon": "^4.0.1"
+	}
+}

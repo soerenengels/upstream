@@ -1,0 +1,22 @@
+.block__infokasten {
+    background: var(--clr-green-100);
+    transition: none;
+    margin-block: 1em;
+    font-size: var(--font-size-s);
+
+    & ::marker {
+        color: var(--clr-green-999);
+        margin-right: .5em;
+    }
+
+    & summary {
+        background: var(--clr-green-500);
+        color: var(--clr-green-999);
+        padding: .5em;
+    }
+
+    & > div {
+        padding: .25em .5em;
+
+    }
+}

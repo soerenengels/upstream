@@ -1,0 +1,19 @@
+title: "Default"
+icon: draft
+
+tabs:
+	content: tabs/content
+	teaser: tabs/article/teaser
+	authors: tabs/article/authors
+	context: tabs/article/context
+	seo: 
+    extends: seo/page
+    label: SEO
+    columns:
+      main:
+        fields:
+          robots: false
+          twitterCardType: false
+          twitterAuthor: false
+          metaInherit: false
+	stats_tab: tabs/stats

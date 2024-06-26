@@ -1,0 +1,57 @@
+label: "Kontext"
+icon: tag
+
+columns:
+	#col_context_1:
+	 #width: 1/3
+		#sections:
+			#context_section_authorship_headline:
+				#type: fields
+				#fields:
+					#field_authorship_headline:
+						#type: headline
+						#label: "Redakteur*innen"
+			#context_section_authorship: sections/article/authorship
+	col_context_2:
+		width: 1/3
+		sections:
+			context_section_meta_headline:
+				type: fields
+				fields:
+					field_meta_headline:
+						type: headline
+						label: "Meta"
+			context_section_published: sections/article/published
+			context_section_meta:
+				type: fields
+				fields:
+					format: fields/article/format
+					tags: fields/article/tags
+	col_context_3:
+		width: 1/3
+		sections:
+			context_section_related_headline:
+				type: fields
+				fields:
+					field_related_headline:
+						type: headline
+						label: "Userflow"
+			context_section_related:
+				type: fields
+				fields:
+					shortcut_home:
+						type: info
+						label: Shortcut
+						text: Über diesen [Shortcut](/panel/pages/home) gelangst du zur Startseite, wo du die Artikel im Kiosk verändern kannst.
+					related:
+						label: Verwandte Artikel (Block)
+						type: pages
+						query: site.pages.template('article')
+						help: "Verwandte Artikel können als Block innerhalb eines Artikel eingefügt werden. Sie werden als Textlinks angezeigt. Möglichst einen älteren und einen aktuelleren Artikel auswählen. Empfohlene Anzahl: 3"
+						max: 5
+					recommended:
+						label: Empfohlene Artikel (Footer)
+						type: pages
+						query: page.siblings(false)
+						help: "Empfohlene Artikel werden unter dem Artikel als Bildkachel angezeigt. Bitte zwei Artikel auswählen."
+						max: 2

@@ -1,0 +1,22 @@
+type: fields
+  fields:
+    seo-headline:
+      label: SEO
+      type: headline
+    seo-title:
+      label: SEO-Titel
+      type: text
+      maxlength: 60
+      help: "Maximal 60 Zeichen. Fokus: Nutzwert"
+    seo-description:
+      label: SEO-Beschreibung
+      type: text
+      maxlength: 150
+      help: "Maximal 150 Zeichen. Ideal: Fragen, Schlagworte."
+    seo-image:
+      label: SEO-Bild / Sharepic
+      type: files
+      multiple: false
+      query: page.images.template('seo-image')
+      uploads: seo-image
+      help: "Das Bild sollte idealerweise 1.200 x 630 Pixel groß und im Format 1,91:1 angelegt sein."

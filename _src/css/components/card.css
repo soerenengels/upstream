@@ -1,0 +1,108 @@
+/* Komponente: Card */
+.cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+	grid-gap: .5rem;
+	margin-inline: 0;
+	margin-block-end: 2em;
+	align-items: stretch;
+}
+
+.card {
+	--font-size: 0.8em;
+	--clr-background: var(--clr-green-900);
+	--clr-text: var(--clr-green-100);
+	--clr-button: var(--clr-green-700);
+
+	background-color: var(--clr-background);
+	color: var(--clr-text);
+	display: grid;
+	font-size: var(--font-size);
+	padding: var(--font-size);
+	position: relative;
+
+	& a {
+		display: block;
+		transition: 0.2s ease;
+		outline: none;
+		text-decoration: none;
+
+		&:focus, &:hover {
+			text-decoration: 0.2em underline;
+			color: unset;
+		}
+
+		&::after {
+			position: absolute;
+			content: "";
+			inset: 0;
+		}
+	}
+
+	&:focus-within {
+		box-shadow: 0 0 0 0.25rem var(--clr-text);
+		&a:focus {
+			text-decoration: none;
+		}
+
+		& ~ .cta {
+			box-shadow: 0 0 0 0.25em red;
+		}
+	}
+
+	& .h2 {
+		max-width: 23ch;
+		outline: none;
+	}
+
+	& .cta {
+		place-self: end;
+		height: unset;
+		color: var(--clr-background);
+		margin-block-end: 0;
+	}
+
+	& .button {
+		&:focus {
+			outline: none;
+		}
+
+		&:focus::before {
+			border-color: var(--clr-button);
+		}
+		&:hover::before {
+			border-color: var(--clr-button);
+		}
+	}
+}
+
+
+.contribute {
+	--clr-text: var(--clr-purple-999);
+	--clr-background: var(--clr-purple-300);
+	background: var(--clr-purple-300);
+	color: var(--clr-purple-900);
+	display: flex;
+	justify-content: space-between;
+	padding: 1rem;
+	& a {
+		text-decoration: none;
+	}
+	& span {
+		text-align: right;
+	}
+}
+
+/* Container: used in home.php, mitglied-werden.php, article-related.php */
+/* .card__container {
+	display: grid;
+	grid-auto-columns: 1fr;
+	gap: 0.5em;
+	list-style-type: none;
+	margin-inline: 0;
+	@media (--viewport-small) {
+		& {
+			grid-auto-flow: column;
+		}
+	}
+} */

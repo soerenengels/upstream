@@ -1,0 +1,31 @@
+redirects:
+  - 
+    from: schlagworte/(:any)
+    to: /artikel/tag
+    status: 301
+    priority: false
+    comment: Redesign 2022
+  - 
+    from: abonnieren/
+    to: /community/mitglied-werden
+    status: 301
+    priority: false
+    comment: Redesign 2022
+  - 
+    from: archiv/
+    to: /artikel
+    status: 301
+    priority: false
+    comment: Redesign 2022
+  - 
+    from: ueber-uns
+    to: /redaktion
+    status: 301
+    priority: false
+    comment: Redesign 2022
+  - 
+    from: transparenz/
+    to: /redaktion/selbstverstandnis
+    status: 301
+    priority: false
+    comment: 'Legacy: Upstream 2021'

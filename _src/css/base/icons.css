@@ -1,0 +1,33 @@
+.icon {
+	--clr-icons: var(--clr-grey-900);
+	--clr-icons-hover: var(--clr-grey-700);
+	--size-icons: 1em;
+
+	[data-theme="light"] & {
+		--clr-icons: var(--clr-green-100);
+		--clr-icons-hover: var(--clr-red-500);
+	}
+	[data-theme="dark"] & {
+		--clr-icons: var(--clr-grey-900);
+		--clr-icons-hover: var(--clr-black);
+	}
+	[data-theme="community"] & {
+		--clr-icons: var(--clr-red-500);
+		--clr-icons-hover: var(--clr-red-700);
+	}
+
+	height: var(--size-icons);
+	width: var(--size-icons);
+
+
+	& * {
+		fill: var(--clr-icons);
+		transition: 0.3s ease;
+	}
+
+	a:hover &, a:focus-visible &, a:focus & {
+		& * {
+			fill: var(--clr-icons-hover);
+		}
+	}
+}
