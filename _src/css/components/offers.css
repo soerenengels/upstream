@@ -91,3 +91,43 @@
 	}
  }
 
+
+ .steady__plans {
+	margin-block: 1.5em;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1em;
+	font-size: var(--font-size-s);
+}
+.steady__plan.container {
+	background: white;/* color-mix(in oklch, var(--clr-green-100), var(--clr-black-900) 10%); */
+	border-radius: 1.5em;
+	border: 1px solid var(--clr-green-900);
+	display: grid;
+	gap: 1em;
+	grid-template-areas:
+		"name"
+		"image"
+		"benefits";
+	grid-template-rows: auto auto 1fr auto;
+	padding-block: 1em;
+	& > *:not(.plan__image) {
+		padding-inline: 1em;
+	}
+}
+.steady__plan.plan__benefits {
+	/* margin-block: 2em; */
+	grid-area: benefits;
+}
+.steady__plan.plan__header {
+	grid-area: name;
+	font-weight: 900;
+	font-size: calc(1em / 0.8);
+}
+.steady__plan.plan__image {
+	grid-area: image;
+	& img {
+		min-width: 100%;
+		height: auto;
+	}
+}
