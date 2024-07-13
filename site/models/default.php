@@ -6,9 +6,11 @@ class DefaultPage extends Page {
 
 		// Get content of the page in the current language
 		$content = $this->content($lang);
+		$description = $content->metaDescription() ?? '';
+		$description = $description == '' ? $content->teaser() : $description;
 
 		return [
-			'metaDescription' => $content->metaDescription() ?? $content->teaser() ?? site()->metaDescription(),
+			'metaDescription' => $description ?? site()->metaDescription(),
 			'twitterAuthor' => '@' . $this->site()->twitter(),
 
 			// Open Graph Image
