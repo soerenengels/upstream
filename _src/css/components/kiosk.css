@@ -48,17 +48,29 @@
 		position: relative;
 		display: none;
 		opacity:0;
+		@media (--viewport-x-small) {
+			& {
+				min-height: calc(100vw * 7 / 5);
+			}
+		}
+		& .indicator, & h3, & p {
+			max-width: 38ch;
+			transform: translateY(2em);
+			opacity: 0;
+
+		}
 
 		&.active {
 			display: grid;
 			z-index: 20;
 			opacity: 1;
 			transition: opacity 0.5s ease;
-		}
-		& .indicator, & h3, & p {
-			max-width: 38ch;
-			transition: .3s ease;
-			animation: appear 2s ease forwards;
+
+			& .indicator, & h3, & p {
+				transition: .3s ease;
+				animation: appear 2s ease forwards;
+				/* animation-delay: 200ms; */
+			}
 		}
 		&.cover .indicators {
 			margin-bottom: -.75em ;
@@ -89,11 +101,46 @@
 		}
 		&:hover {
 			& h3 a {
-				color: var(--clr-green-300);
+				/* color: var(--clr-green-300); */
+				text-decoration: .1em underline var(--clr-red-700);
+				text-underline-offset: .15em;
 			}
 		}
 	}
 
+}
+
+.kiosk__play-indicator {
+	grid-area: cover;
+	display: grid !important;
+	grid-template-areas: "button";
+	z-index: 100;
+	justify-self: end;
+	align-self: start;
+	margin: 1em;
+
+	.kiosk[data-play-state="running"] & .icon:nth-child(2) {
+			visibility: visible;
+			opacity: 1;
+	}
+	.kiosk[data-play-state="paused"] & .icon:nth-child(1), .kiosk[data-play-state="stopped"] & .icon:nth-child(1) {
+			visibility: visible;
+			opacity: 1;
+	}
+
+	& .icon {
+		grid-area: button;
+		visibility: hidden;
+		drop-shadow: 0 0 1em var(--clr-green-999);
+		opacity: 0;
+		--size-icons: 2em;
+		--clr-icons-hover: var(--clr-green-300);
+		--clr-icons: color-mix(in oklch, var(--clr-green-300), transparent 30%);
+	}
+
+	&:active .icon {
+		scale:1.1;
+	}
 }
 
 /* Cover Teaser */
@@ -207,7 +254,10 @@
 				position: absolute;
 				inset: 0;
 				background: var(--clr-green-999);
-				animation: progress 5s ease-out alternate;
+				animation: progress 7s ease-out alternate;
+				.kiosk[data-play-state="paused"] &, .kiosk[data-play-state="stopped"] & {
+					animation-play-state: paused;
+				}
 			}
 		}
 	}
@@ -219,4 +269,19 @@
 	95% {
 		transform: translateY(0%);
 	}
+}
+
+.card__container {
+	overflow: auto;
+	height: 70vh;
+	grid-area: cover;
+	scroll-snap-type: y mandatory;
+	scroll-snap-stop: always;
+	overscroll-behaviour-y: none;
+}
+.kiosk .article__card {
+	display: grid;
+	opacity: 1;
+	height: 70vh;
+	scroll-snap-align: start;
 }

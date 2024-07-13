@@ -1,9 +1,15 @@
-<div class="kiosk" role="region" aria-roledescription="carousel" aria-label="Artikel">
+<div class="kiosk" role="region" aria-roledescription="carousel" aria-label="Artikel"  data-play-state="paused">
 
 	<p class="kiosk__headline h1">
 			<?= $headline ?>
 	</p>
 
+	<button class="kiosk__play-indicator" aria-label="Play/Pause Animation">
+		<?= svg('assets/icons/play-circle-fill.svg') ?>
+		<?= svg('assets/icons/pause-circle-fill.svg') ?>
+	</button>
+
+	<div class="card__container">
 	<?php $index = 1; ?>
 	<?php foreach ($articles as $article): ?>
 	<?php snippet('components/cards/article', [
@@ -14,11 +20,13 @@
 				'hidden' => ($index == 1 ? false : true)
 			],
 			'type' => 'cover',
+			'indicators' => false,
 			'loading' => $index == 1 ? 'eager' : 'lazy'
 		]);
 		$index++;
 	?>
 	<?php endforeach ?>
+	</div>
 
 	<?php /* snippet('components/navigation/bullet', [
 		'items' => $articles,

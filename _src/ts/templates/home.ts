@@ -1,92 +1,196 @@
-console.log("hi2!")
-
-/** Rotation duration in milliseconds */
-const rotationDuration = 7000
-let playState: "running"|"paused" = 'running'
-
-// Start rotating through views
-let interval = setInterval(tickView, rotationDuration)
-
-const views = document.querySelectorAll('.kiosk__card')
-const handles = document.querySelectorAll<HTMLElement>('.kiosk__title')
-
-// TODO
-// A11Y: Prevent motion when preference is set
-
-// Make Handles interactive
-handles.forEach((handle, index) => {
-	handle.addEventListener('mouseover', (event) => {
-		console.log('mouseover: ', index)
-		handle.querySelector('button').style.animationPlayState = 'paused';
-		clearInterval(interval)
-	})
-	handle.addEventListener('mouseout', (event) => {
-		console.log('mouseout: ', index)
-		const button = handle.querySelector('button')
-		button.style.animationPlayState = 'running';
-		if(playState === 'paused') return
-		interval = setInterval(tickView, rotationDuration)
-	})
-
-	const carousel = document.querySelector<HTMLElement>('.kiosk')
-	carousel.addEventListener('focusin', (event) => {
-		console.log('focusin ')
-		clearInterval(interval)
-		playState = 'paused'
-	})
-	carousel.addEventListener('focusout', (event) => {
-		/* playState = 'running'
-		console.log('focusout ') */
-	})
-
-
-	// Change view on click
-	handle.addEventListener('click', (e) => {
-		change(index)
-	})
-
-})
+// Setup
 
 
 
-/** Tick the next view */
-function tickView() {
-	let currentView = getCurrentView();
-	let nextView = currentView < handles.length - 1 ? currentView + 1 : 0
-	change(nextView)
-}
+class Kiosk {
+	private kiosk: HTMLElement
+	private intervals: number[] = []
+	private ticks: number = 0
+	private intervalDurationInSeconds: number = 8
 
-/** Get the index of active view */
-function getCurrentView(): number {
-	return Array.from(views).findIndex((view) => {
-		return view.classList.contains('active')
-	})
-}
+	constructor(element?: HTMLElement | undefined) {
+		this.kiosk = element ?? document.querySelector<HTMLElement>(".kiosk");
+		this.init();
+	}
 
-/** Change both: handle and view */
-function change(id: number) {
-	changeView(id)
-	changeHandle(id)
-}
+	// TODO
+	// A11Y: Prevent motion when preference is set
+	get prefersReducedMotion(): boolean {
+		return window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
+	}
 
-/** Change view */
-function changeView(id: number) {
-	views.forEach((view, index) => {
-		if (index === id) {
-			view.classList.add('active')
-		} else {
-			view.classList.remove('active')
+	get handles(): NodeListOf<HTMLElement> {
+		return this.kiosk.querySelectorAll(".kiosk__title")
+	}
+
+	get views(): NodeListOf<HTMLElement> {
+		return this.kiosk.querySelectorAll(".kiosk__card")
+	}
+
+
+	get playState(): "running" | "paused" | "stopped" {
+		return this.kiosk.dataset.playState as "running" | "paused" | "stopped";
+	}
+	set playState(value: "running" | "paused" | "stopped") {
+		this.kiosk.dataset.playState = value;
+	}
+
+	startInterval() {
+		this.intervals.push(setInterval(this.tick.bind(this), 1000));
+	}
+	clearIntervals() {
+		this.intervals.forEach((interval) => {
+			clearInterval(interval);
+		});
+	}
+	/** Tick the next view */
+	tick() {
+		if (this.ticks >= this.intervalDurationInSeconds) {
+			this.ticks = 0;
+			this.update();
 		}
-	})
+		this.ticks++;
+	}
+
+	togglePlayState(): void {
+		if (this.playState === "running") {
+			this.playState = "stopped";
+			this.pause();
+		} else {
+			this.playState = "running";
+			this.play();
+		}
+	}
+
+	get currentHandle(): HTMLElement {
+		return this.kiosk.querySelector(".kiosk__title.active");
+	}
+	get currentIndex(): number {
+		return Array.from(this.views).findIndex((view) => {
+			return view.classList.contains("active");
+		});
+	}
+	get nextIndex(): number {
+		return this.currentIndex < this.views.length - 1 ? this.currentIndex + 1 : 0;
+	}
+
+	public pause(): void {
+		this.playState = "paused";
+		this.clearIntervals();
+		this.ticks = 0;
+	}
+
+	public stop(): void {
+		this.playState = "stopped";
+		this.clearIntervals();
+		this.ticks = 0;
+	}
+
+	public play(): void {
+		this.playState = this.playState === "stopped" ? "stopped" : 'running'
+
+		// trigger a dom reflow to restart animation
+		const handle = this.currentHandle
+		handle.classList.remove("active")
+		void handle.offsetWidth
+		handle.classList.add("active")
+
+		if (this.playState === "running") {
+			console.log('startInterval')
+			this.startInterval()
+		}
+	}
+
+	/**
+	 * Update elements
+	 * * to next item (default), or
+	 * * to specific index
+	 * @param {number|null} index Index of view to change to | null for next view
+	 * @returns {void}
+	 */
+	update(index: number | null = null): void {
+		console.log('update')
+		if (index === null) {
+			index = this.nextIndex;
+		}
+
+		// Update active Elements
+		this.updateElements(this.handles, index);
+		this.updateElements(this.views, index);
+	}
+
+	/**
+	 * Update elements to index
+	 * by updating their classes
+	 * @param { NodeListOf<HTMLElement>} elements List of elements to update
+	 * @param {number} index Index of view to change to
+	 */
+	updateElements(
+		elements: NodeListOf<HTMLElement>,
+		index: number,
+		scrollIntoView: boolean = true
+	) {
+		elements.forEach((element, i) => {
+			if (i === index) {
+				element.classList.add("active");
+				if (scrollIntoView && element.classList.contains("kiosk__card")) element.scrollIntoView({ behavior: "smooth", block: "center" });
+			} else {
+				element.classList.remove("active");
+			}
+		});
+	}
+
+	init() {
+		let timer = null
+		const container = this.kiosk.querySelector(".card__container")
+		container?.addEventListener("scroll", () => {
+			// Debounce function call
+			clearTimeout(timer);
+    	timer = setTimeout(function () {
+				this.views?.forEach((view: HTMLElement, index) => {
+					// Calculate Tops of Views and Container
+					const viewTop = view.getBoundingClientRect().top
+					const containerTop = container.getBoundingClientRect().top
+					const isCurrentView = viewTop - containerTop <= 10
+
+					// Skip if this is not the current View
+					if (!isCurrentView) return
+					this.pause()
+					this.updateElements(this.handles, index, false);
+					this.updateElements(this.views, index, false);
+					/* console.log("index " + index + " is current view") */
+				})
+			}.bind(this), 100);
+		})
+		this.handles.forEach((handle, index) => {
+			if (!this.prefersReducedMotion) {
+				handle.addEventListener("mouseover", () => {
+					if (handle.classList.contains("active")) {
+						this.pause();
+					}
+				});
+				handle.addEventListener("mouseout", (event) => {
+					if (handle.classList.contains("active")) {
+						this.play();
+					}
+				});
+			}
+			handle.addEventListener("click", () => {
+				this.update(index);
+			});
+			handle.addEventListener("focusin", () => {
+				this.update(index);
+			});
+
+		})
+		this.kiosk.querySelector(".kiosk__play-indicator")?.addEventListener("click", (event) => {
+			this.togglePlayState()
+		})
+
+		if(!this.prefersReducedMotion) {
+			this.play()
+		}
+	}
 }
 
-/** Change handle */
-function changeHandle(id: number) {
-	handles.forEach((handle, index) => {
-		if (index === id) {
-			handle.classList.add('active')
-		} else {
-			handle.classList.remove('active')
-		}
-	})
-}
+const kiosk = new Kiosk()
