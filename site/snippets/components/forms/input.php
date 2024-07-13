@@ -1,4 +1,5 @@
-<input 
+<input
+		aria-label="<?= $label ?? $placeholder ?? '' ?>"
     name="<?= $name ?? '' ?>"
     type="<?= $type ?? 'text' ?>"
     value="<?= $value ?? '' ?>"
