@@ -27,7 +27,7 @@
 		gap: .5em;
     @media screen and (--viewport-small) {
         & {
-            grid-template-rows: calc(1.5 * var(--font-size-h2)) auto;
+            grid-template-rows: calc(1.5 * var(--font-size-l)) auto;
         }
     }
     & h2 {
