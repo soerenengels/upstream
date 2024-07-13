@@ -1,7 +1,7 @@
 # More about the site blueprint: https://getkirby.com/docs/reference/panel/blueprints/site
 title: Website
 options:
-  *:
+  "*":
     changeTitle: false
     update: false
     delete: false
