@@ -16,14 +16,19 @@
 	margin-inline-end: .75em;
 	font-size: var(--indicator-size, var(--font-size-xs));
 
-	& a {
+	& a, & span {
 		color: var(--indicator-clr-text);
 		text-decoration: .1em underline var(--indicator-clr-underline);
 		text-underline-offset: .25em;
 		transition: all 0.8s;
+		&:is(.article__card.text.newsletter a),
+		&:is(.article__card.text.artikel a) {
+			--indicator-clr-text: var(--clr-green-999);
+			--indicator-clr-underline: var(--indicator-clr-text);
+		}
 
 		&:hover, &:focus {
-			&:not(.new a) {
+			&:not(.new span) {
 				--clr-links-hover: var(--indicator-clr-underline);
 				text-underline-offset: 0;
 				text-decoration: 0 solid transparent;
@@ -35,6 +40,6 @@
 	&.new {
 		--indicator-clr-underline: var(--clr-red-900);
 		--indicator-clr-text: white;
-		cursor: default;
+		cursor: text;
 	}
 }
