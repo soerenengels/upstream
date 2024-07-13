@@ -14,6 +14,7 @@
 						'href' => false,
 						'label' => 'Neu'
 					],
+					'loading' => 'eager',
 					'type' => "cover"
 			])?>
 			<?php snippet('components/cards/article', [
