@@ -31,6 +31,13 @@
 		grid-area: var(--color-area, 1 / 2 / -1 / -1);
 	}
 
+	@media (--viewport-xxsmall) {
+		& {
+			--grid-template-columns: 1fr;
+			--grid-area-image: 2 / 1 / -1 / 2;
+			--grid-area-text: 2 / 2 / -1 / 3;
+		}
+	}
 	@media (--viewport-small) {
 		& {
 			--grid-template-columns: repeat(2, 1fr);
@@ -99,10 +106,36 @@
 
 	/* Card Types: .default (Default), .text, .cover */
 	&.article__header {
-		--grid-template-columns: 1fr 1fr;
-		--grid-template-rows: auto 1fr;
+		--grid-template-columns: 1fr;
+		--grid-template-rows: auto auto auto;
+		--grid-template-areas: "picture" "headline" "teaser";
+		@media (--viewport-medium) {
+			& {
+				--grid-template-columns: 1fr 1fr;
+				--grid-template-rows: auto 1fr;
+				--grid-template-areas: "picture headline" "picture teaser";
+			}
+		}
 		margin-block-end: 1em;
+		& .color-area {
+			grid-row: 1 / -1;
+			grid-column: 1 / -1;
+		}
 		& .image__container {
+			grid-area: picture;
+			z-index: 10;
+			aspect-ratio: 1 / 1;
+			@media (--viewport-xsmall) {
+				& {
+					aspect-ratio: 16 / 9;
+				}
+			}
+			@media (--viewport-medium) {
+				& {
+					aspect-ratio: unset;
+				}
+			}
+
 			&:before,
 			&:after {
 				display: none;
@@ -186,7 +219,7 @@
 */
 
 .newsletter, .artikel {
-	--clr-background: var(--clr-green-700);
+	--clr-background: var(--clr-green-5..00);
 	--clr-text: var(--clr-green-999);
 }
 .interview {
