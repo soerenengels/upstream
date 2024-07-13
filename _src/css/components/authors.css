@@ -128,7 +128,7 @@
     font-size: var(--font-size-s);
 }
 .user a {
-	text-decoration: none;
+	/* text-decoration: none; */
 }
 
 
@@ -137,7 +137,7 @@
 	position: relative;
 	top: -.35em;
 	font-size: var(--font-size-s);
-	text-decoration: none;
+	/* text-decoration: none; */
 }
 
 .article__user {

@@ -59,7 +59,7 @@ position: relative;
 /* redundant with .card */
 & a {
 	display: block;
-	transition: 0.2s ease;
+	transition: text-decoration-style 0.2s ease;
 
 	&:focus {
 		text-decoration: 0.2em solid underline;
@@ -127,9 +127,12 @@ margin-bottom: .25rem;
 .author p, .user p {
 	font-size: var(--font-size-s);
 }
-.user a {
+.user a:link {
 text-decoration: none;
 }
+.user a:hover {
+	text-decoration: .1em underline var(--clr-red-700);
+	}
 
 
 /* Autor*innen-Seite */
