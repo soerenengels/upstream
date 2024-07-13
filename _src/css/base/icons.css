@@ -8,8 +8,8 @@
 		--clr-icons-hover: var(--clr-red-500);
 	}
 	[data-theme="dark"] & {
-		--clr-icons: var(--clr-grey-900);
-		--clr-icons-hover: var(--clr-black);
+		--clr-icons: currentColor;
+		--clr-icons-hover: currentColor;
 	}
 	[data-theme="community"] & {
 		--clr-icons: var(--clr-red-500);
@@ -26,6 +26,11 @@
 	}
 
 	a:hover &, a:focus-visible &, a:focus & {
+		& * {
+			fill: var(--clr-icons-hover);
+		}
+	}
+	&:hover, &:focus-visible, &:focus & {
 		& * {
 			fill: var(--clr-icons-hover);
 		}

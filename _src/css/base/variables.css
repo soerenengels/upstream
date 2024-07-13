@@ -4,21 +4,18 @@
 	--font-family-headlines: "Montserrat Variable", "Montserrat", "Avenir", Arial, Helvetica, sans-serif;
 	--font-family: "Montserrat Variable", "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 
-
-	--font-size-h1: 1.5em;
-	--font-size-h2: 1.25em;
-	--font-size-h3: 1.1em;
-	--font-size-h4: 1em;
-	--font-size-h5: 1em;
-	--font-size-h6: 1em;
 	--font-size-base: 16px;
-	/* Neuere Variablen */
 	--font-size-xs: .66em;
 	--font-size-s: .8em;
 	--font-size-normal: 1em;
 	--font-size-m: 1.1em;
 	--font-size-l: 1.25em;
 	--font-size-xl: 1.5em;
+
+	--padding-s: 0.25rem;
+	--padding-m: 0.5rem;
+	--padding-l: 1rem;
+	--padding-xl: 2rem;
 
 
 
@@ -38,9 +35,9 @@
 	--max-content-width: 50rem;
 	--subtitle-threshold: 1060px;
 
-	--clr-input-background: var(--clr-white-50);
-	--clr-input-text: var(--clr-green-900);
-	--clr-input-placeholder: var(--clr-grey-500);
+	--clr-input-background: color-mix(in oklch, transparent 90%, black);
+	--clr-input-text: var(--clr-purple-999);
+	--clr-input-placeholder: var(--clr-purple-900);
 
 	--clr-blockquote-text: var(--clr-body-text);
 	--clr-blockquote-background: var(--clr-grey-300);

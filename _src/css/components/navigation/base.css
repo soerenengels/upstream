@@ -1,3 +1,16 @@
+nav {
+	& ul, & ol {
+		display: flex;
+		flex-direction: column;
+		list-style-type: none;
+		margin: 0;
+		gap: var(--gap, var(--padding-s))
+	}
+	& a {
+		text-decoration: none;
+	}
+}
+
 .k-navigation {
 	--clr-link: var(--clr-white-900);
 	--clr-underline: var(--clr-red-700);

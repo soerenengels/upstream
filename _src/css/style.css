@@ -14,12 +14,12 @@
 @import 'layout/footer.css';
 @import 'layout/grids.css';
 
+
 @import 'components/block__infokasten.css';
 @import 'components/block__format__title.css';
 /*@import 'components/hero.css';*/
 @import 'components/kiosk.css';
 @import 'components/card.css';
-@import 'components/breadcrumb.css';
 @import 'components/forms/subscription.css';
 @import 'components/article.css';
 @import 'components/takeaways.css';
@@ -28,11 +28,12 @@
 @import 'components/tags.css';
 @import 'components/article/index.css';
 /*@import 'components/authors.css';*/
-@import 'components/navigation/index.css';
+@import 'components/navigation';
 @import 'components/subscribe.css';
 @import 'components/search.css';
 @import 'components/counter.css';
 @import 'components/offers.css';
+@import 'components/logo.css';
 
 @import 'pages/author.css';
 @import 'pages/articles.css';

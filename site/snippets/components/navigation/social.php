@@ -20,7 +20,7 @@ $socials = [
 ?>
 
 <nav
-	class="social <?= $class ?? '' ?>"
+	class="k-navigation k-navigation-social social <?= $class ?? '' ?>"
 	data-theme="<?= $theme ?? 'default' ?>"
 	aria-label="social"
 	style="--size-icons_: <?= $size ?? 'initial' ?>">

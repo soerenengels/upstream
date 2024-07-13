@@ -95,16 +95,20 @@ span.category, .category-indicator {
 /* Links */
 a {
   color: unset;
-	transition: color 0.3s ease;
+	transition: text-decoration 0.3s ease;
 	word-break: break-word;
-}
-a:hover, a:active {
-  color: #FD6163;
-  text-decoration-color: #235861;
-}
-a[aria-current=page] {
-  font-weight: bold;
-  /* font-style: italic; */
+	text-underline-offset: .15em;
+
+	&[aria-current=page] {
+		font-weight: bold;
+	}
+
+	text-decoration: underline currentColor;
+	&:link {
+	}
+	&:hover, &:active {
+		text-decoration-color: var(--clr-red-700);
+	}
 }
 
 a.social {
@@ -139,14 +143,21 @@ a.social {
 
 /* Links: zum Glossar*/
 
-.article__content a[href^="https://"]:not([href^="https://upstream"]) {
-    color: var(--clr-green-900);
+main a[href^="https://"]:not([href^="https://upstream"]):not(:is(.no-external a)) {
+    /* color: var(--clr-green-900); */
+		transition: scale .3s ease;
 
     &:after {
         color: var(--clr-red-900);
+				text-decoration: none;
         content: "↗";
-        /* display: inline-block; */
+        display: inline-block;
+				padding: .2em;
+
     }
+		&:hover::after {
+			scale: 1.25;
+		}
 }
 
 /* main a[href^="https://"]:not([href^="https://dev.upstream"]) {

@@ -1,0 +1,23 @@
+/* Header: Logo */
+.logo {
+	font-weight: 800;
+	letter-spacing: -0.02em;
+	text-decoration: none;
+
+	&:first-letter {
+		letter-spacing: -0.5em;
+	}
+
+	/* Layout: Image and Text */
+	display: inline-flex;
+	align-items: center;
+	justify-self: start;
+	gap: var(--padding-s);
+
+	& img {
+		height: 0.8em;
+		width: auto;
+		transform-origin: center;
+	}
+
+}

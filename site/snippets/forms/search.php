@@ -6,13 +6,15 @@
     <?php snippet('components/forms/input', [
         'type' => 'search',
         'name' => 'q',
+				'label' => 'Suche',
         'value' => isset($query) ? html($query) : '',
-        'placeholder' => $placeholder ?? 'Durchsuche Upstream'
+        'placeholder' => $placeholder ?? 'Durchsuche Upstream …'
     ]) ?>
-    <?php snippet('components/forms/input', [
+    <?php snippet('components/forms/button', [
         'type' => 'submit',
-        'class' => 'button button__dark',
-        'value' => 'Suchen'
-    ]) ?>
+				'iconOnly' => $iconOnly ?? true,
+        'value' => 'Suchen',
+				'icon' => 'search-line'
+		]) ?>
 <?php endsnippet() ?>
 </search>

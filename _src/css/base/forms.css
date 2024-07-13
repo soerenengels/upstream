@@ -7,31 +7,41 @@ select {
 	--clr-outline: var(--clr-red-300);
 	background-color: var(--clr-input-background);
 	border: none;
-	border-radius: 2em;
+	border-radius: .5em;
 	color: var(--clr-input-text);
 	font: inherit;
 	font-size: var(--font-size-s);
 	margin-block: 1em;
 	padding: var(--padding);
+
 	&::placeholder {
 		color: var(--clr-input-placeholder);
 	}
-	&:active,
-	&:focus {
-		outline-color: var(--clr-outline);
-	}
 }
 
+.form {
+	background: var(--clr-input-background, color-mix(in oklch, transparent 90%, black));
+	padding: 1em;
+}
 input {
 	--padding: 0.5em 1.5em;
 	box-sizing: content-box;
+	display: block;
 	height: 2em;
+	background: var(--clr-input-background, color-mix(in oklch, transparent 90%, black));
 }
 textarea {
 	--padding: 1em 1em;
 	height: 5em;
 	width: 100%;
 	resize: vertical;
+}
+input, textarea {
+	&:active,
+	&:focus {
+		outline-color: var(--clr-outline);
+		box-shadow: 0 0 .5em -0.3em color-mix(in oklch, var(--clr-input-background), black 40%);
+	}
 }
 
 button,
@@ -45,11 +55,20 @@ input[type="radio"] {
 	--padding: 0.5em 1.5em;
 	height: 2em;
 }
+button {
+	&:has(.icon) {
+		/* --padding: 0.5em 1.5em; */
+		display: flex;
+		gap: var(--padding-s);
+		align-items: center;
+	}
+}
 
-.button__dark {
+.button__dark, button[data-theme="dark"] {
 	--clr-input-text: var(--clr-button-primary-text, var(--clr-red-500));
 	--clr-input-background: var(--clr-button-primary-bg, var(--clr-purple-999));
 	--clr-outline: var(--clr-red-300);
+	--clr-icons: currentColor;
 }
 
 .no-button {
@@ -69,39 +88,54 @@ input[type="radio"] {
 }
 
 input[type="search"] {
-	--clr-outline: var(--clr-red-700);
+	/* --clr-outline: var(--clr-red-700); */
 	cursor: pointer;
 	background-color: transparent;
+	background-color: var(--clr-input-background, color-mix(in oklch, transparent 80%, black));
 	border: none;
-	border-radius: .25em .25em 0 0;
+	border-radius: .25em;
 	border-bottom: .2em solid var(--clr-grey-300);
-	color: var(--clr-green-100);
+	color: var(--clr-input-text, var(--clr-green-100));
 	font: inherit;/*
 	font-size: var(--font-size-m); */
 	font-weight: 400;
-	margin-block: 1em 2em;
-	padding: var(--padding);
-	outline: unset;
-	--padding: 0.15em .5em;
+	/* margin-block: 1em 2em; */
+	padding: var(--padding-s) var(--padding-m);
 	box-sizing: content-box;
-	height: auto;
+	/* height: auto; */
 	&::placeholder {
-		color: var(--clr-green-100);
+		color: var(--clr-input-placeholder, var(--clr-green-100));
 		opacity: .8;
 		transition: opacity .3s ease;
 	}
-	&:hover, &:focus {
+	&::-webkit-search-cancel-button {
+		-webkit-appearance: none;
+		height: 1em;
+		width: 1em;
+		border-radius: 50em;
+		display: block;
+		content: "clear";
+		/* background: url(<?php svg('assets/icons/cancel-line.svg') ?>) no-repeat 50% 50%;
+		background-size: contain; */
+		opacity: 0;
+		pointer-events: none;
+	}
+	&:focus::-webkit-search-cancel-button {
+		opacity: .3;
+		pointer-events: all;
+	}
+
+	&:hover {
 		&::placeholder {
 			opacity: 1;
 		}
 	}
-	&:active,
-	&:focus,
-	&:focus-visible {
-		background-color: color-mix(in oklch, var(--clr-green-999) 90%, black);
-		outline: none;
-		border-bottom: .2em solid var(--clr-outline);
+	&:focus {
+		&::placeholder {
+			opacity: .5;
+		}
 	}
+
 }
 
 /* a.button, span.button {
