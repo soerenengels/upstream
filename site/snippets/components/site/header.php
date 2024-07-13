@@ -14,8 +14,4 @@
 	<!-- PRIMARY NAVIGATION -->
 	<?php snippet('components/navigation/primary') ?>
 
-	<?php /*<!-- SEARCH -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
-	<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script> */ ?>
-
 </header>
