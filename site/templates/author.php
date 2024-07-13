@@ -3,6 +3,7 @@
 use Kirby\Cms\StructureObject;
 use Kirby\Data\Yaml;
 use Kirby\Toolkit\A;
+use Kirby\Toolkit\Str;
 use Kirby\Uuid\Uuid;
 
  ?>
@@ -52,5 +53,10 @@ use Kirby\Uuid\Uuid;
 		'attrs' => [
 			'class' => 'col-3'
 		]
-	]); ?>
+	], slots: true); ?>
+		<?php snippet('forms/search', [
+				'action' => '/suche/author:' . Str::slug($fullname),
+					'placeholder' => 'Artikel von ' . explode(' ',trim($fullname))[0] . ' durchsuchen …'
+				]) ?>
+	<?php endsnippet() ?>
 </article>
