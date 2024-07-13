@@ -1,7 +1,7 @@
 .format__title {
     font-weight: bold;
     font-size: var(--font-size-s);
-    color: var(--clr-green-999);
+    color: var(--clr-article-format-title, var(--clr-green-999));
     margin-top: 2em;
     & + figure, & + h2 {
         margin-top: 0;

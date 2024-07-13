@@ -1,5 +1,5 @@
 .takeaways {
-	background: var(--clr-white);
+	background: var(--clr-takeaways-background, var(--clr-white));
 	padding: 1.5em .5em .5em;
 	font-size: var(--font-size-s);
 	position: relative;
@@ -11,7 +11,7 @@
 		margin: 0 auto;
 		inset: 0 auto auto auto;
 		transform: translateY(-.5em);
-		background: var(--clr-green-100);
+		background: var(--clr-takeaways-indicator, var(--clr-green-100));
 		border-radius: 2em;
 		border: .1em solid var(--clr-green-900);
 		padding: .25em .5em;
@@ -25,10 +25,12 @@
 	}
 	& a {
 		font-weight: bold;
-		text-decoration: none;
+		/* text-decoration: none; */
 		&:first-of-type::before {
+			text-decoration: none;
 			content: "→";
 			font-weight: bold;
+			display: inline-block;
 			padding-right: .25em;
 		}
 	}
