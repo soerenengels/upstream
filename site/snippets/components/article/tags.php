@@ -18,7 +18,7 @@
 			endif;
 			?>
 			<li>
-				<a href="/artikel/tags/tag:<?= $tag ?>"  style="--opacity: <?= $opacity ?>;">
+				<a href="/artikel/tags/tag:<?= $tag ?>"  style="--opacity: <?= 1/* $opacity */ ?>;">
 					<?= $tag ?>
 				</a>
 			</li>

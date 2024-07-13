@@ -7,11 +7,22 @@ body {
 		var(--font-size-base-multiplicator, 1) * var(--font-size-base)
 	);
 	line-height: 1.5;
+	@media (prefers-reduced-motion: reduce) {
+		& {
+			scroll-behavior: auto;
+		}
+	}
 	scroll-behavior: smooth;
 
 	@media (--viewport-small) {
 		& {
 			--font-size-base-multiplicator: 1.25;
 		}
+	}
+}
+
+@media (prefers-reduced-motion) {
+	* {
+		animation: none !important;
 	}
 }
