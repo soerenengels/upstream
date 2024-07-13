@@ -4,7 +4,7 @@
     $article = $article ?? false;
     if (!$article) return;
 		$article_format = $article->format()->value() ?? null;
-		$article_indicators = $article->indicators()->split();
+		$article_indicators = $article->indicators()->split() ? $article->indicators()->split() : $article->topic();
     $indicators = $indicators ?? [];
     $published = new Date($article->date());
 
@@ -29,9 +29,15 @@
 
     <?php foreach ($indicators as $indicator): ?>
         <li class="indicator <?= $indicator['class'] ?>">
-            <a <?php e($indicator['href'], 'href="/suche?q=' . $indicator['label'] .'"') ?>>
+            <?php if($indicator['href']): ?>
+						<a <?php e($indicator['href'], 'href="/suche?q=' . $indicator['label'] .'"') ?>>
                 <?= $indicator['label'] ?>
             </a>
+						<?php else: ?>
+							<span>
+								<?= $indicator['label'] ?>
+							</span>
+						<?php endif ?>
         </li>
     <?php endforeach ?>
 
