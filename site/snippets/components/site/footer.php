@@ -1,14 +1,15 @@
 <?php $show = isset($reduced) ? false : true ?>
 <footer data-theme="light" id="footer" class="<?= $show ? '' : 'footer__reduced' ?>">
   <div class="footer footer__container">
-    <nav class="footer__navigation social">
+    <!-- <nav class="footer__navigation social">
       <?php /* <li><a href="" class="button__subscribe--light">Mitglied werden</a></li> */ ?>
-      <?php snippet('components/navigation/social', ['theme' => 'light']) ?>
-    </nav>
-    <nav class="footer__navigation sitenav">
-			<?= $site->navigation('footer') ?>
 
-    </nav>
+    </nav> -->
+		<?php snippet('components/navigation/social', ['theme' => 'light']) ?>
+		<?= $site->navigation('footer') ?>
+    <!-- <nav class="footer__navigation sitenav">
+
+    </nav> -->
     <div class="toTop">
       <p><a href="#top"><span>Zum Seitenanfang</span><?= svg('assets/icons/arrow-up-circle-fill.svg') ?></a></p>
     </div>
