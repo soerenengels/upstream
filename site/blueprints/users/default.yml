@@ -5,6 +5,8 @@
 # available for each defined user role with blueprints that only contain a title.
 # More about users, roles and permissions: https://getkirby.com/docs/guide/users/managing-users
 title: User
+permissions:
+  lukasbestle.versions: false
 
 columns:
   - width: 1/2

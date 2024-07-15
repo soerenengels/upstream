@@ -8,6 +8,7 @@ permissions:
     users: false
     system: false
     linktree: false
+  lukasbestle.versions: false
 
 columns:
   - width: 2/3
