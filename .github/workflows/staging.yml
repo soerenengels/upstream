@@ -29,4 +29,5 @@ jobs:
           server-dir: ${{ secrets.staging_server_dir }}
           username: ${{ secrets.staging_username }}
           password: ${{ secrets.staging_password }}
+          port: 22
           protocol: ftps
