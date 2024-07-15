@@ -1,7 +1,8 @@
 <search>
+<?php $params = new Kirby\Http\Params(params()) ?>
 <?php snippet('components/forms/form', [
         'class' => $class ?? 'search__form',
-        'action' => $action ?? '/suche'
+        'action' => $action ?? '/suche/' . $params
     ], slots: true) ?>
     <?php snippet('components/forms/input', [
         'type' => 'search',

@@ -5,11 +5,13 @@ return function ($page, $kirby) {
     /* Setup */
     $authorid = $page->userid();
     $author = $kirby->users()->findBy('id', $authorid);
-    $avatar = $author->avatar()->crop(400,400, 'top')->html(); 
+    $avatar = $author->avatar()->crop(400,400, 'top')->html();
     $articlesByAuthor = page('artikel')
         ->children()
         ->listed()
-        ->filterBy('author',$authorid, '-')
+				->filter(function($child) use ($author) {
+					return $child->author()->toUsers()->has($author);
+				})
         ->sortBy('date', 'desc');
     /* $glossaryPages = $page->children()->listed();
     $totalChars = count($glossaryPages);

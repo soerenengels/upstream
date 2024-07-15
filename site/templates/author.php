@@ -55,8 +55,8 @@ use Kirby\Uuid\Uuid;
 		]
 	], slots: true); ?>
 		<?php snippet('forms/search', [
-				'action' => '/suche/author:' . Str::slug($fullname),
+				'action' => '/suche/author:' . $author->id(),
 					'placeholder' => 'Artikel von ' . explode(' ',trim($fullname))[0] . ' durchsuchen …'
-				]) ?>
+		]) ?>
 	<?php endsnippet() ?>
 </article>

@@ -10,7 +10,7 @@
 						flex-direction: row;
             flex-wrap: wrap;
             margin: 0;
-            margin-block: 1em;
+            /* margin-block: 1em; */
         }
         & li {
             margin-right: .33em;
@@ -19,6 +19,10 @@
     & nav, & >  section:not(.glossar__item) {
         grid-column: 1 / -1;
     }
+
+	& search {
+		grid-column: 1 / -1;
+	}
 }
 .article__card.article__header {
 	grid-column: 1 / -1;

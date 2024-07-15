@@ -18,7 +18,7 @@
 			endif;
 			?>
 			<li>
-				<a href="/artikel/tags/tag:<?= $tag ?>"  style="--opacity: <?= 1/* $opacity */ ?>;">
+				<a href="/suche/tags:<?= Kirby\Toolkit\Str::slug($tag) ?>?q=*"  style="--opacity: <?= 1/* $opacity */ ?>;">
 					<?= $tag ?>
 				</a>
 			</li>

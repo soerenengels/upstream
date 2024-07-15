@@ -2,6 +2,10 @@
 
 <article id="glossar">
 	<?php snippet('components/article/header') ?>
+	<?php snippet('forms/search', [
+		'action' => '/suche/type:glossar/',
+		'placeholder' => 'Durchsuche das Glossar …'
+	]) ?>
 	<?php snippet('components/navigation/alphabet', compact('alphabet')) ?>
 
 	<?php
