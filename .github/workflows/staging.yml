@@ -1,0 +1,33 @@
+name: Staging Deployment
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+      - run: npm install
+      - run: npm run build --if-present
+
+      - name: Install Composer Dependencies
+        run: composer update --ignore-platform-reqs --no-interaction --no-suggest
+
+      - name: FTP Deployment
+        uses: SamKirkland/FTP-Deploy-Action@4.3.3
+        with:
+          server: ${{ secrets.test_server }}
+          server-dir: ${{ secrets.staging_server_dir }}
+          username: ${{ secrets.staging_username }}
+          password: ${{ secrets.staging_password }}
+          protocol: ftps
+          dry-run: true
