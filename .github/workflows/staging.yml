@@ -30,4 +30,3 @@ jobs:
           username: ${{ secrets.staging_username }}
           password: ${{ secrets.staging_password }}
           protocol: ftps
-          dry-run: true
