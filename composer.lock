@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fdcf8e5274fd6196aac9b10dc26b4e17",
+    "content-hash": "407e1c13d0bf391d5c4faea6815e9669",
     "packages": [
         {
             "name": "afbora/kirby-minify-html",
@@ -881,6 +881,47 @@
             "time": "2022-09-24T15:57:16+00:00"
         },
         {
+            "name": "lukasbestle/kirby-versions",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lukasbestle/kirby-versions.git",
+                "reference": "41bfcba10dbd145775036869611a0ca16993999e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lukasbestle/kirby-versions/zipball/41bfcba10dbd145775036869611a0ca16993999e",
+                "reference": "41bfcba10dbd145775036869611a0ca16993999e",
+                "shasum": ""
+            },
+            "require": {
+                "getkirby/cms": "^4.0",
+                "getkirby/composer-installer": "^1.1",
+                "php": ">=8.1.0 <8.4.0"
+            },
+            "type": "kirby-plugin",
+            "extra": {
+                "installer-name": "versions",
+                "kirby-cms-path": false
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Lukas Bestle",
+                    "email": "project-kirbyversions@lukasbestle.com"
+                }
+            ],
+            "description": "Versions Plugin for Kirby",
+            "support": {
+                "issues": "https://github.com/lukasbestle/kirby-versions/issues",
+                "source": "https://github.com/lukasbestle/kirby-versions/tree/2.0.1"
+            },
+            "time": "2024-03-08T21:45:37+00:00"
+        },
+        {
             "name": "michelf/php-smartypants",
             "version": "1.8.1",
             "source": {
@@ -1142,16 +1183,16 @@
         },
         {
             "name": "soerenengels/kirby-steady",
-            "version": "0.2.1",
+            "version": "0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/soerenengels/kirby-steady.git",
-                "reference": "159a042747e01b99ceecff20c5e14aad79f6a1f4"
+                "reference": "8a0db4030bfc7d563d0c87ebf0cc161dd57cb0ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/soerenengels/kirby-steady/zipball/159a042747e01b99ceecff20c5e14aad79f6a1f4",
-                "reference": "159a042747e01b99ceecff20c5e14aad79f6a1f4",
+                "url": "https://api.github.com/repos/soerenengels/kirby-steady/zipball/8a0db4030bfc7d563d0c87ebf0cc161dd57cb0ee",
+                "reference": "8a0db4030bfc7d563d0c87ebf0cc161dd57cb0ee",
                 "shasum": ""
             },
             "require": {
@@ -1162,6 +1203,10 @@
                 "getkirby/cms": "^4.0"
             },
             "type": "kirby-plugin",
+            "extra": {
+                "installer-name": "steady",
+                "kirby-cms-path": false
+            },
             "autoload": {
                 "psr-4": {
                     "Soerenengels\\": "classes/"
@@ -1187,9 +1232,9 @@
             ],
             "support": {
                 "issues": "https://github.com/soerenengels/kirby-steady/issues",
-                "source": "https://github.com/soerenengels/kirby-steady/tree/0.2.1"
+                "source": "https://github.com/soerenengels/kirby-steady/tree/0.3"
             },
-            "time": "2023-11-13T11:41:47+00:00"
+            "time": "2024-06-26T16:40:06+00:00"
         },
         {
             "name": "spatie/schema-org",
@@ -1722,16 +1767,16 @@
         },
         {
             "name": "symfony/polyfill-php80",
-            "version": "v1.29.0",
+            "version": "v1.30.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php80.git",
-                "reference": "87b68208d5c1188808dd7839ee1e6c8ec3b02f1b"
+                "reference": "77fa7995ac1b21ab60769b7323d600a991a90433"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/87b68208d5c1188808dd7839ee1e6c8ec3b02f1b",
-                "reference": "87b68208d5c1188808dd7839ee1e6c8ec3b02f1b",
+                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/77fa7995ac1b21ab60769b7323d600a991a90433",
+                "reference": "77fa7995ac1b21ab60769b7323d600a991a90433",
                 "shasum": ""
             },
             "require": {
@@ -1782,7 +1827,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php80/tree/v1.29.0"
+                "source": "https://github.com/symfony/polyfill-php80/tree/v1.30.0"
             },
             "funding": [
                 {
@@ -1798,7 +1843,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-01-29T20:11:03+00:00"
+            "time": "2024-05-31T15:07:36+00:00"
         },
         {
             "name": "symfony/yaml",
@@ -1874,16 +1919,16 @@
         },
         {
             "name": "tobimori/kirby-dreamform",
-            "version": "1.3.2",
+            "version": "1.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tobimori/kirby-dreamform.git",
-                "reference": "080d852e6394d71bda6666478df1cd862514787a"
+                "reference": "b26adb1adafe9fd7e67b98e394561247ed40e91f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tobimori/kirby-dreamform/zipball/080d852e6394d71bda6666478df1cd862514787a",
-                "reference": "080d852e6394d71bda6666478df1cd862514787a",
+                "url": "https://api.github.com/repos/tobimori/kirby-dreamform/zipball/b26adb1adafe9fd7e67b98e394561247ed40e91f",
+                "reference": "b26adb1adafe9fd7e67b98e394561247ed40e91f",
                 "shasum": ""
             },
             "require": {
@@ -1913,7 +1958,7 @@
             "homepage": "https://plugins.andkindness.com/dreamform",
             "support": {
                 "issues": "https://github.com/tobimori/kirby-dreamform/issues",
-                "source": "https://github.com/tobimori/kirby-dreamform/tree/1.3.2"
+                "source": "https://github.com/tobimori/kirby-dreamform/tree/1.3.4"
             },
             "funding": [
                 {
@@ -1921,7 +1966,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2024-06-04T14:16:50+00:00"
+            "time": "2024-07-08T16:04:03+00:00"
         },
         {
             "name": "tobimori/kirby-icon-field",
@@ -2183,16 +2228,16 @@
         },
         {
             "name": "voku/simple_html_dom",
-            "version": "4.8.9",
+            "version": "4.8.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/voku/simple_html_dom.git",
-                "reference": "e477d316aa0ea9d4d482d9f542af81b617d46ad2"
+                "reference": "716822ed52ed3a1881542be07a786270de390e99"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/simple_html_dom/zipball/e477d316aa0ea9d4d482d9f542af81b617d46ad2",
-                "reference": "e477d316aa0ea9d4d482d9f542af81b617d46ad2",
+                "url": "https://api.github.com/repos/voku/simple_html_dom/zipball/716822ed52ed3a1881542be07a786270de390e99",
+                "reference": "716822ed52ed3a1881542be07a786270de390e99",
                 "shasum": ""
             },
             "require": {
@@ -2240,7 +2285,7 @@
             ],
             "support": {
                 "issues": "https://github.com/voku/simple_html_dom/issues",
-                "source": "https://github.com/voku/simple_html_dom/tree/4.8.9"
+                "source": "https://github.com/voku/simple_html_dom/tree/4.8.10"
             },
             "funding": [
                 {
@@ -2260,7 +2305,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-05-25T07:52:26+00:00"
+            "time": "2024-07-03T16:05:14+00:00"
         }
     ],
     "packages-dev": [],

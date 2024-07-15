@@ -26,7 +26,8 @@
     "tobimori/kirby-icon-field": "^2.0",
     "junohamburg/kirby-visual-block-selector": "^2.1",
     "tobimori/kirby-dreamform": "^1.3",
-    "distantnative/retour-for-kirby": "^5.2"
+    "distantnative/retour-for-kirby": "^5.2",
+    "lukasbestle/kirby-versions": "^2.0"
   },
   "scripts": {
     "start": [
