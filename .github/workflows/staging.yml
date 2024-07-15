@@ -25,7 +25,7 @@ jobs:
       - name: FTP Deployment
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
-          server: ${{ secrets.test_server }}
+          server: ${{ secrets.staging_server }}
           server-dir: ${{ secrets.staging_server_dir }}
           username: ${{ secrets.staging_username }}
           password: ${{ secrets.staging_password }}
